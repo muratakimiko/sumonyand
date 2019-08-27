@@ -1,0 +1,69 @@
+.space{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+  
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  perspective: 500px;
+}
+
+.stars{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 1px;
+  height: 1px;
+}
+
+.star{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+
+  transform: 
+    translate(-50%,-50%) rotate(var(--angle)) 
+    translateY(-100px) translateZ(0);
+}
+
+.star:nth-of-type(1){  --angle: 00deg;  --z: -100px; --delay: -2.0s;}
+.star:nth-of-type(2){  --angle: 30deg;  --z: -200px; --delay: -1.3s;}
+.star:nth-of-type(3){  --angle: 60deg;  --z: -10px;  --delay: -4.2s;}
+.star:nth-of-type(4){  --angle: 90deg;  --z: -90px;  --delay: -3.3s;}
+.star:nth-of-type(5){  --angle: 120deg; --z: -180px; --delay: -2.1s;}
+.star:nth-of-type(6){  --angle: 150deg; --z: -300px; --delay: -5.3s;}
+.star:nth-of-type(7){  --angle: 180deg; --z: -150px; --delay: -6.7s;}
+.star:nth-of-type(8){  --angle: 210deg; --z: -220px; --delay: -1.5s;}
+.star:nth-of-type(9){  --angle: 240deg; --z: -250px; --delay: -2.4s;}
+.star:nth-of-type(10){ --angle: 270deg; --z: -30px;  --delay: -3.1s;}
+.star:nth-of-type(11){ --angle: 300deg; --z: -80px;  --delay: -5.0s;}
+.star:nth-of-type(12){ --angle: 330deg; --z: -120px; --delay: -7.1s;}
+
+.anim{
+  background-color: white;
+  animation: anim 4s var(--delay) linear infinite;
+}
+
+@keyframes anim{
+  from{ 
+    transform: 
+      translate(-50%,-50%) rotate(var(--angle)) 
+      translateY(-100px) translateZ(var(--z));
+  }
+  to{   
+    transform: 
+      translate(-50%,-50%) rotate(var(--angle)) 
+      translateY(-75vw) translateZ(var(--z));
+  }
+}
