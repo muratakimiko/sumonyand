@@ -16,10 +16,10 @@ html {
 }
 
 body {
-    color: #333;
+    color: #fff;
     /* 基本フォント　*/
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 2rem;
+    font-size: 1.6rem;
     line-height: 1.85;
     font-feature-settings: "palt";
     letter-spacing: 0.05em;
@@ -28,6 +28,7 @@ body {
     /*　横揺れ防止　*/
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    background-color: black;
 }
 
 img {
@@ -36,16 +37,21 @@ img {
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
     padding-bottom: 2%;
 }
 
+
+.contaner {
+    margin-top: auto;
+    margin-bottom: auto;
+}
 
 
 /*-----------------------------
@@ -53,3 +59,484 @@ h3 {
  * header
  *
  *----------------------------*/
+
+.header_area {
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.header_title {
+    position: absolute;
+    height: 250px;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    margin-top: -125px;
+}
+
+.header_area h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.header_area h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.header_area p {
+    width: 100%;
+    text-align: center;
+}
+
+.supaceship {
+    position: absolute;
+    top: 70px;
+    left: 910px;
+}
+
+.scroll_bunyan {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+}
+/*-----------------------------
+ *
+ * universe_space
+ *
+ *----------------------------*/
+
+
+
+
+/*-----------------------------
+ *
+ * potfolio_web
+ *
+ *----------------------------*/
+.potfolio_web_background {
+    justify-content: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    position: relative;
+    width: 100%;
+}
+
+.potfolio_web_area {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+.web_icon {
+    position: relative;
+    width: 468px;
+    height: 468px;
+}
+
+
+/*-----star-----*/
+
+.web_star {
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: #FFF;
+}
+
+.potfolio_web_area h2 {
+    font-size: 4rem;
+}
+
+
+.web_star:nth-of-type(1) {
+    width: 10px;
+    height: 10px;
+    left: 100px;
+    top: 50px;
+}
+
+/*-----//star-----*/
+
+.spaceship_kidnap {
+    position: absolute;
+    top: 1280px;
+}
+
+.space_base {
+    position: absolute;
+    left: 50%;
+    top: 850px;
+}
+
+
+/*-----------------------------
+ *
+ * potfolio_graphic
+ *
+ *----------------------------*/
+
+.potfolio_graphic_area_background {
+    justify-content: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    position: relative;
+    width: 100%;
+}
+
+.potfolio_graphic_area {
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.potfolio_graphic_area h2 {
+    font-size: 4rem;
+}
+
+.space_bunyan_float {
+    position: absolute;
+    left: 50%;
+    top: 850px;
+}
+
+/*-----------------------------
+ *
+ * atmosphere　大気圏
+ *
+ *----------------------------*/
+
+.atmosphere_area {
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/BG_border.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/*-----------------------------
+ *
+ * Sky1
+ *
+ *----------------------------*/
+
+.sky1_area {
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    background-color: #BBE2F1;
+
+}
+
+/*-----------------------------
+ *
+ * potfolio_game_app
+ *
+ *----------------------------*/
+
+.potfolio_game_app_area_background {
+    justify-content: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    position: relative;
+    width: 100%;
+    background-color: #BBE2F1;
+}
+
+.potfolio_game_app_area {
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.potfolio_game_app_area h2 {
+    font-size: 4rem;
+}
+
+/*-----------------------------
+ *
+ * Sky2
+ *
+ *----------------------------*/
+
+.sky2_area_background {
+    justify-content: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    position: relative;
+    width: 100%;
+    background: linear-gradient(#BBE2F1, #FFF);
+}
+
+/*-----------------------------
+ *
+ * other_work
+ *
+ *----------------------------*/
+
+.other_work_area_background {
+    justify-content: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    position: relative;
+    width: 100%;
+    background: #FFF;
+}
+
+.other_work_area_background h2 {
+    text-align: center;
+    font-size: 4rem;
+    padding-bottom: 40px;
+    color: #FAAFBB;
+}
+
+.other_work_area {
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.other_work_area h3 {
+    text-align: center;
+    font-size: 3rem;
+    color: #999;
+}
+
+.makizushi_icon_area {
+    padding: 50px;
+}
+
+.photography_icon_area {
+    padding: 50px;
+}
+
+/*-----------------------------
+ *
+ * dohyoiri
+ *
+ *----------------------------*/
+
+.dohyoiri_area {
+    justify-content: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 100px;
+    position: relative;
+    width: 1280px;
+    height: 950px;
+    background-color: #fff;
+    background-image: url(../images/bg_skytree.png);
+    background-repeat: no-repeat;
+}
+
+/*スモーネコ ぶにゃんたちの配置*/
+.d_bunyan_1 {
+    position: absolute;
+    top: 612px;
+    left: 496px;
+}
+
+.d_bunyan_2 {
+    position: absolute;
+    top: 578px;
+    left: 479px;
+}
+
+.d_bunyan_3 {
+    position: absolute;
+    top: 530px;
+    left: 497px;
+}
+
+.d_bunyan_4 {
+    position: absolute;
+    top: 509px;
+    left: 534px;
+}
+
+.d_bunyan_5 {
+    position: absolute;
+    top: 497px;
+    left: 599px;
+}
+
+.d_bunyan_6 {
+    position: absolute;
+    top: 504px;
+    left: 653px;
+}
+
+.d_bunyan_7 {
+    position: absolute;
+    top: 519px;
+    left: 696px;
+}
+
+.d_bunyan_8 {
+    position: absolute;
+    top: 539px;
+    left: 726px;
+}
+
+.d_bunyan_9 {
+    position: absolute;
+    top: 594px;
+    left: 729px;
+}
+
+.d_bunyan_10 {
+    position: absolute;
+    top: 616px;
+    left: 698px;
+}
+
+.d_bunyan_11 {
+    position: absolute;
+    top: 635px;
+    left: 657px;
+}
+
+.d_bunyan_12 {
+    position: absolute;
+    top: 637px;
+    left: 603px;
+}
+
+.d_bunyan_13 {
+    position: absolute;
+    top: 633px;
+    left: 540px;
+}
+
+/*スモーネコ ぶにゃん（ダンス）たちの配置*/
+.dance_bunyan_1 {
+    position: absolute;
+    top: 559px;
+    left: 316px;
+}
+
+.dance_bunyan_2 {
+    position: absolute;
+    top: 601px;
+    left: 266px;
+}
+
+.dance_bunyan_3 {
+    position: absolute;
+    top: 667px;
+    left: 278px;
+}
+
+.dance_bunyan_4 {
+    position: absolute;
+    top: 704px;
+    left: 333px;
+}
+
+.dance_bunyan_5 {
+    position: absolute;
+    top: 736px;
+    left: 396px;
+}
+
+.dance_bunyan_6 {
+    position: absolute;
+    top: 507px;
+    left: 827px;
+}
+
+.dance_bunyan_7 {
+    position: absolute;
+    top: 540px;
+    left: 885px;
+}
+
+.dance_bunyan_8 {
+    position: absolute;
+    top: 592px;
+    left: 936px;
+}
+
+.dance_bunyan_9 {
+    position: absolute;
+    top: 667px;
+    left: 915px;
+}
+
+.dance_bunyan_10 {
+    position: absolute;
+    top: 722px;
+    left: 860px;
+}
+
+
+/*-----------------------------
+ *
+ * profile
+ *
+ *----------------------------*/
+
+.profile_area_background {
+    justify-content: center;
+    padding: 50px;
+    position: relative;
+    width: 100%;
+    background: #FFFAD9;
+}
+
+.profile_area {
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    background: #FFFAD9;
+}
+
+.profile_text_area {
+    padding-left: 35px;
+    width: 770px;
+}
+
+.profile_area_background h2 {
+    text-align: center;
+    font-size: 4rem;
+    color: #FFE066;
+}
+
+.profile_area h3 {
+    font-size: 1.8rem;
+    color: #999;
+}
+
+.profile_post {
+    font-size: 1.4rem;
+    color: #999;
+}
+
+.profile_text {
+    font-size: 1.6rem;
+    color: #999;
+}
