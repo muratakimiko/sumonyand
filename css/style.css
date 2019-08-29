@@ -1,10 +1,16 @@
 @charset "UTF-8";
 
+:root {
+    --starttime: 0s;
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 
 /* CSS Document*/
 html {
@@ -71,7 +77,7 @@ h3 {
 .header_title {
     position: absolute;
     height: 250px;
-    top: 50%;
+    top: 30%;
     width: 100%;
     text-align: center;
     margin-top: -125px;
@@ -80,35 +86,90 @@ h3 {
 .header_area h1 {
     width: 100%;
     text-align: center;
+    opacity: 0;
+    animation: scale-in 3s ease calc(var(--starttime) - 0.5S) forwards normal;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .header_area h2 {
     width: 100%;
     text-align: center;
+    opacity: 0;
+    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
 
 .header_area p {
     width: 100%;
     text-align: center;
+    opacity: 0;
+    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
 
-.supaceship {
+
+.spaceship_img {
     position: absolute;
-    top: 70px;
-    left: 910px;
+    top: 10%;
+    right: -22%;
+    animation: UFO 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
 
-.scroll_bunyan {
+@keyframes UFO {
+    0% {
+        top: 10%;
+        right: -22%;
+        margin-right: 0;
+    }
+
+    100% {
+        top: 42%;
+        right: 50%;
+        margin-right: -165px;
+    }
+}
+
+.scroll_bunyan_img {
     position: absolute;
     left: 50%;
     bottom: 10%;
+    opacity: 0;
+    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
+
+.space_bunyan_img {
+    position: absolute;
+    top: 42%;
+    right: 50%;
+}
+
+
 /*-----------------------------
  *
- * universe_space
+ * universe
  *
  *----------------------------*/
-
 
 
 
@@ -117,6 +178,7 @@ h3 {
  * potfolio_web
  *
  *----------------------------*/
+
 .potfolio_web_background {
     justify-content: center;
     padding-top: 150px;
@@ -163,6 +225,87 @@ h3 {
     left: 100px;
     top: 50px;
 }
+
+#web_star16 {
+    opacity: 0;
+}
+
+#web_star15 {
+    opacity: 0;
+}
+
+#web_star14 {
+    opacity: 0;
+}
+
+#web_star13 {
+    opacity: 0;
+}
+
+#web_star12 {
+    opacity: 0;
+}
+
+#web_star11 {
+    opacity: 0;
+}
+
+#web_star10 {
+    opacity: 0;
+}
+
+#web_star9 {
+    opacity: 0;
+}
+
+#web_star8 {
+    opacity: 0;
+}
+
+#web_star_7 {
+    opacity: 0;
+}
+
+#web_star_6 {
+    opacity: 0;
+}
+
+#web_star_5 {
+    opacity: 0;
+}
+
+#web_star_4 {
+    opacity: 0;
+}
+
+#web_star3 {
+    opacity: 0;
+}
+
+#web_star2 {
+    opacity: 0;
+}
+
+#circle_25 {
+    opacity: 0;
+    animation: fade-in 1s ease 0 forwards normal;
+}
+
+#frame {
+    opacity: 0;
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 
 /*-----//star-----*/
 

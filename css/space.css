@@ -11,7 +11,7 @@
     -webkit-perspective: 500px;
     -moz-perspective: 500px;
     perspective: 500px;
-    animation: fade-out 0.7s ease 4s 1 forwards normal;
+    animation: fade-out 0.7s ease var(--starttime) 1 forwards normal;
     z-index: 100000;
 }
 
