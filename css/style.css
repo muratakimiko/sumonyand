@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/*変数*/
 :root {
     --starttime: 0s;
 }
@@ -59,6 +60,51 @@ h3 {
     margin-bottom: auto;
 }
 
+/*-----------------------------
+ *
+ * アニメーション
+ *
+ *----------------------------*/
+
+/*フェードイン*/
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*拡大表示*/
+@keyframes scale-in {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/*header宇宙船を右下へ移動*/
+@keyframes UFO {
+    0% {
+        top: 10%;
+        right: -22%;
+        margin-right: 0;
+    }
+
+    100% {
+        top: 42%;
+        right: 50%;
+        margin-right: -165px;
+    }
+}
+
 
 /*-----------------------------
  *
@@ -90,30 +136,6 @@ h3 {
     animation: scale-in 3s ease calc(var(--starttime) - 0.5S) forwards normal;
 }
 
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-
-
-@keyframes scale-in {
-    0% {
-        transform: scale(0.2);
-        opacity: 0;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
 .header_area h2 {
     width: 100%;
     text-align: center;
@@ -133,36 +155,77 @@ h3 {
     position: absolute;
     top: 10%;
     right: -22%;
+    z-index: 1;
     animation: UFO 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
 
-@keyframes UFO {
-    0% {
-        top: 10%;
-        right: -22%;
-        margin-right: 0;
-    }
 
-    100% {
-        top: 42%;
-        right: 50%;
-        margin-right: -165px;
-    }
+
+
+.space_bunyan_img {
+    position: absolute;
+    top: 47%;
+    right: 47%;
+}
+
+/*--------scroll--------*/
+
+.scroll_area {
+    position: absolute;
+    left: 49%;
+    bottom: 14%;
+    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
 
 .scroll_bunyan_img {
-    position: absolute;
-    left: 50%;
-    bottom: 10%;
     opacity: 0;
     animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
 
-.space_bunyan_img {
+.scroll_area p {
     position: absolute;
-    top: 42%;
-    right: 50%;
+    padding-top: 10px;
+    left: -9%;
 }
+
+p span {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: sdb 1.5s infinite;
+    animation: sdb 1.5s infinite;
+    box-sizing: border-box;
+}
+
+@-webkit-keyframes sdb {
+    0% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+    }
+}
+
+
+/*--------//scroll--------*/
+
+/*--------Hamburger Menu--------*/
+
+/*--------//Hamburger Menu--------*/
 
 
 /*-----------------------------
@@ -171,7 +234,18 @@ h3 {
  *
  *----------------------------*/
 
+.space_bunyan_float_img {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+}
 
+.spaceship_kidnap_img {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+
+}
 
 /*-----------------------------
  *
@@ -196,6 +270,10 @@ h3 {
     width: 100%;
 }
 
+.potfolio_web_area h2 {
+    font-size: 4rem;
+}
+
 .web_icon {
     position: relative;
     width: 468px;
@@ -203,121 +281,26 @@ h3 {
 }
 
 
-/*-----star-----*/
 
-.web_star {
-    position: absolute;
-    display: block;
-    width: 6px;
-    height: 6px;
-    border-radius: 100%;
-    background-color: #FFF;
-}
+/*-----------------------
+　星座 Web_icon
+-----------------------*/
+/*枠*/
+#web_frame {}
 
-.potfolio_web_area h2 {
-    font-size: 4rem;
-}
-
-
-.web_star:nth-of-type(1) {
-    width: 10px;
-    height: 10px;
-    left: 100px;
-    top: 50px;
-}
-
-#web_star16 {
+/*星（左上右）*/
+#web_star1 {
     opacity: 0;
 }
 
-#web_star15 {
-    opacity: 0;
-}
-
-#web_star14 {
-    opacity: 0;
-}
-
-#web_star13 {
-    opacity: 0;
-}
-
-#web_star12 {
-    opacity: 0;
-}
-
-#web_star11 {
-    opacity: 0;
-}
-
-#web_star10 {
-    opacity: 0;
-}
-
-#web_star9 {
-    opacity: 0;
-}
-
-#web_star8 {
-    opacity: 0;
-}
-
-#web_star_7 {
-    opacity: 0;
-}
-
-#web_star_6 {
-    opacity: 0;
-}
-
-#web_star_5 {
-    opacity: 0;
-}
-
-#web_star_4 {
-    opacity: 0;
-}
-
-#web_star3 {
-    opacity: 0;
-}
-
+/*星（右上左）*/
 #web_star2 {
     opacity: 0;
 }
 
-#circle_25 {
-    opacity: 0;
-    animation: fade-in 1s ease 0 forwards normal;
-}
-
-#frame {
-    opacity: 0;
-}
-
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-
-/*-----//star-----*/
-
-.spaceship_kidnap {
-    position: absolute;
-    top: 1280px;
-}
-
-.space_base {
-    position: absolute;
-    left: 50%;
-    top: 850px;
+/*星（右上右）*/
+#web_star3{
+    opacity: 0;    
 }
 
 
@@ -343,15 +326,105 @@ h3 {
     width: 100%;
 }
 
+.graphic_icon_area {
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    position: relative;
+}
+
 .potfolio_graphic_area h2 {
     font-size: 4rem;
 }
 
-.space_bunyan_float {
-    position: absolute;
-    left: 50%;
-    top: 850px;
+.graphic_text_contaner {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 10%;
 }
+
+
+/*-----------------------
+　星座Grapic_icon
+-----------------------*/
+
+/*枠_11*/
+#graphic_frame {
+    opacity: 0;
+    animation: fade-in 1.8s ease 2.8s forwards normal;
+}
+
+/*星(左上)_1*/
+#graphic_star1 {
+    opacity: 0;
+    animation: fade-in 1s ease 0.1s forwards normal;
+}
+
+/*星（上中間左）_3*/
+#graphic_star2 {
+    opacity: 0;
+    animation: fade-in 1s ease 1s forwards normal;
+}
+
+/*星（上頂上）_5*/
+#graphic_star3 {
+    opacity: 0;
+    animation: fade-in 1s ease 2s forwards normal;
+}
+
+/*星（上中間右）_4*/
+#graphic_star4 {
+    opacity: 0;
+    animation: fade-in 1s ease 1.5s forwards normal;
+}
+
+/*星（右上）_2*/
+#graphic_star5 {
+    opacity: 0;
+    animation: fade-in 1s ease 0.5s forwards normal;
+}
+
+/*星（右中間）_9*/
+#graphic_star6 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.55s forwards normal;
+}
+
+/*星（右下）_6*/
+#graphic_star7 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.25s forwards normal;
+}
+
+/*星（下中間）_10*/
+#graphic_star8 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.65s forwards normal;
+}
+
+/*星（左下）_7*/
+#graphic_star9 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.35s forwards normal;
+}
+
+/*星（左中間）_8*/
+#graphic_star10 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.45s forwards normal;
+}
+
+/*グラフィックのイラスト_12*/
+.graphic_icon_img {
+    position: absolute;
+    top: 25%;
+    left: 18%;
+    opacity: 0;
+    animation: fade-in 1.8s ease 2.9s forwards normal;
+}
+
+
+
 
 /*-----------------------------
  *
