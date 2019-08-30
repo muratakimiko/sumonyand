@@ -274,34 +274,134 @@ p span {
     font-size: 4rem;
 }
 
-.web_icon {
+.web_icon_area {
+    justify-content: center;
     position: relative;
-    width: 468px;
-    height: 468px;
 }
-
 
 
 /*-----------------------
 　星座 Web_icon
 -----------------------*/
-/*枠*/
-#web_frame {}
 
-/*星（左上右）*/
-#web_star1 {
+.web_icon_img {
+    position: absolute;
+    top: 10%;
+    left: 11%;
     opacity: 0;
+    animation: fade-in 1.8s ease 3s forwards normal;
 }
 
-/*星（右上左）*/
+/*----画面---*/
+
+/*表示17_枠*/
+#web_frame {
+    opacity: 0;
+    animation: fade-in 1.8s ease 3s forwards normal;
+}
+
+/*表示1_星（左上左）*/
+#web_star8 {
+    opacity: 0;
+    animation: fade-in 1s ease 0.1s forwards normal;
+}
+
+/*表示2_星（右上左）*/
 #web_star2 {
     opacity: 0;
+    animation: fade-in 1s ease 0.8s forwards normal;
 }
 
-/*星（右上右）*/
-#web_star3{
-    opacity: 0;    
+/*表示3_星（左上右）*/
+#web_star1 {
+    opacity: 0;
+    animation: fade-in 1s ease 1.2s forwards normal;
+
 }
+
+/*表示4_星（右上右）*/
+#web_star3 {
+    opacity: 0;
+    animation: fade-in 1s ease 1.6s forwards normal;
+}
+
+/*表示5_星（左下右）*/
+#web_star6 {
+    opacity: 0;
+    animation: fade-in 1s ease 1.8s forwards normal;
+}
+
+/*表示6_星（右下右）*/
+#web_star4 {
+    opacity: 0;
+    animation: fade-in 1s ease 1.95s forwards normal;
+}
+
+/*表示7_星（右下左）*/
+#web_star5 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.05s forwards normal;
+}
+
+/*表示8_星（左下左）*/
+#web_star7 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.15s forwards normal;
+}
+
+
+/*---画面ボタン---*/
+
+/*表示9_星（右）*/
+#web_star9 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.25s forwards normal;
+}
+
+/*表示10_星（左）*/
+#web_star10 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.35s forwards normal;
+}
+
+/*---台---*/
+
+/*表示11_星（右上）*/
+#web_star11 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.4s forwards normal;
+}
+
+/*表示15_星（右中間）*/
+#web_star12 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.5s forwards normal;
+}
+
+/*表示12_星（左下）*/
+#web_star14 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.6s forwards normal;
+}
+
+/*表示13_星（右下）*/
+#web_star13 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.7s forwards normal;
+}
+
+/*表示14_星（左上）*/
+#web_star16 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.8s forwards normal;
+}
+
+/*表示16_星（左中間）*/
+#web_star15 {
+    opacity: 0;
+    animation: fade-in 1s ease 2.9s forwards normal;
+}
+
 
 
 /*-----------------------------
@@ -348,73 +448,73 @@ p span {
 　星座Grapic_icon
 -----------------------*/
 
-/*枠_11*/
+/*表示11_枠*/
 #graphic_frame {
     opacity: 0;
     animation: fade-in 1.8s ease 2.8s forwards normal;
 }
 
-/*星(左上)_1*/
+/*表示1_星(左上)*/
 #graphic_star1 {
     opacity: 0;
     animation: fade-in 1s ease 0.1s forwards normal;
 }
 
-/*星（上中間左）_3*/
+/*表示3_星（上中間左）*/
 #graphic_star2 {
     opacity: 0;
     animation: fade-in 1s ease 1s forwards normal;
 }
 
-/*星（上頂上）_5*/
+/*表示5_星（上頂上）*/
 #graphic_star3 {
     opacity: 0;
     animation: fade-in 1s ease 2s forwards normal;
 }
 
-/*星（上中間右）_4*/
+/*表示4_星（上中間右）*/
 #graphic_star4 {
     opacity: 0;
     animation: fade-in 1s ease 1.5s forwards normal;
 }
 
-/*星（右上）_2*/
+/*表示2_星（右上）*/
 #graphic_star5 {
     opacity: 0;
     animation: fade-in 1s ease 0.5s forwards normal;
 }
 
-/*星（右中間）_9*/
+/*表示9_星（右中間）*/
 #graphic_star6 {
     opacity: 0;
     animation: fade-in 1s ease 2.55s forwards normal;
 }
 
-/*星（右下）_6*/
+/*表示6_星（右下）*/
 #graphic_star7 {
     opacity: 0;
     animation: fade-in 1s ease 2.25s forwards normal;
 }
 
-/*星（下中間）_10*/
+/*表示10_星（下中間）*/
 #graphic_star8 {
     opacity: 0;
     animation: fade-in 1s ease 2.65s forwards normal;
 }
 
-/*星（左下）_7*/
+/*表示7_星（左下）*/
 #graphic_star9 {
     opacity: 0;
     animation: fade-in 1s ease 2.35s forwards normal;
 }
 
-/*星（左中間）_8*/
+/*表示8_星（左中間）*/
 #graphic_star10 {
     opacity: 0;
     animation: fade-in 1s ease 2.45s forwards normal;
 }
 
-/*グラフィックのイラスト_12*/
+/*表示12_グラフィックのイラスト*/
 .graphic_icon_img {
     position: absolute;
     top: 25%;
