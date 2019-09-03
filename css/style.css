@@ -104,13 +104,13 @@ h3 {
 /*header宇宙船を右下へ移動*/
 @keyframes UFO {
     0% {
-        top: 10%;
+        top: 10px;
         right: -22%;
         margin-right: 0;
     }
 
     100% {
-        top: 42%;
+        top: 320px;
         right: 50%;
         margin-right: -165px;
     }
@@ -196,24 +196,6 @@ h3 {
     font-weight: 600;
     line-height: 2.5;
 }
-
-
-.spaceship_img {
-    position: absolute;
-    top: 10%;
-    right: -22%;
-    z-index: 1;
-    animation: UFO 3s ease calc(var(--starttime) + 1S) forwards normal;
-}
-
-.spaceship_light_img {
-    position: absolute;
-    top: 42%;
-    right: 49%;
-    margin-right: -165px;
-    z-index: 1;
-}
-
 
 /*--------scroll--------*/
 
@@ -873,14 +855,20 @@ h3 {
     width: 100%;
     background: #FFFAD9;
 }
-
-.profile_area {
-    justify-content: center;
-    display: flex;
+.profile_bunyan_area{
+    display: block;
     padding: 20px;
     position: relative;
-    width: 100%;
-    background: #FFFAD9;
+    width: 500px;
+    background: #FFF;    
+}
+.profile_area {
+
+    display: block;
+    padding: 20px;
+    position: relative;
+    width: 500px;
+    background: #FFF;
 }
 
 .profile_text_area {
@@ -894,7 +882,7 @@ h3 {
     color: #FFE066;
 }
 
-.profile_area h3 {
+.profile_area_background h3 {
     font-size: 1.8rem;
     color: #999;
 }
@@ -914,6 +902,29 @@ h3 {
  * move_illust
  *
  *----------------------------*/
+
+.spaceship_img {
+    position: absolute;
+/*
+    top: 10px;
+    right: -22%;
+*/
+    z-index: 10;
+    animation: UFO 3s ease calc(var(--starttime) + 1S) forwards normal;
+}
+
+.spaceship_light_img {
+    position: absolute;
+    top: 380px;
+    right: 49%;
+    margin-right: -165px;
+    z-index: 1;
+}
+
+.spaceship_light_img.fade-in{
+        animation: fade-in 1s ease 0s forwards normal;
+}
+
 
 .space_bunyan_img {
     position: absolute;
