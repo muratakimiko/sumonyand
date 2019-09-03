@@ -146,6 +146,10 @@ h3 {
 }
 
 
+.wrapper{
+    display: none;
+}
+
 /*-----------------------------
  *
  * header
@@ -855,13 +859,15 @@ h3 {
     width: 100%;
     background: #FFFAD9;
 }
-.profile_bunyan_area{
+
+.profile_bunyan_area {
     display: block;
     padding: 20px;
     position: relative;
     width: 500px;
-    background: #FFF;    
+    background: #FFF;
 }
+
 .profile_area {
 
     display: block;
@@ -905,10 +911,6 @@ h3 {
 
 .spaceship_img {
     position: absolute;
-/*
-    top: 10px;
-    right: -22%;
-*/
     z-index: 10;
     animation: UFO 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
@@ -921,8 +923,8 @@ h3 {
     z-index: 1;
 }
 
-.spaceship_light_img.fade-in{
-        animation: fade-in 1s ease 0s forwards normal;
+.spaceship_light_img.fade-in {
+    animation: fade-in 1s ease 0s forwards normal;
 }
 
 
@@ -932,10 +934,15 @@ h3 {
     right: 47%;
 }
 
+.space_bunyan_img.fade-in {
+    animation: fade-in 1s ease 0s forwards normal;
+}
+
 .UFO_kidnap {
     position: absolute;
     top: 850px;
     left: 0%;
+    transition: 0.4s cubic-bezier(0,0,0.35,1.09);
 }
 
 .float_bunyan_down {

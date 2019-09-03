@@ -1,10 +1,7 @@
 $(function () {
 
-    var UFO_kidnap = $('.UFO_kidnap');
-    var UFO_currentY = UFO_kidnap.offset().top;
-    console.log(UFO_currentY);
-
-
+    //グローバル変数のスクロール値
+    var scrollY;
 
     //ハンバーガーメニュー
     $('.btn_menu').click(function () {
@@ -17,29 +14,33 @@ $(function () {
         text: 'ニャー、 すもう　かっこいい\nニャー、 ちきゅう　ジャックするね'
     });
 
-//プロローグ中はスクロール不可(setTimeout)
+    //    ウィンドウの高さを取得
+    var window_height = $(window).height();
+    console.log('windowheight' + window_height);
+
+    //プロローグ中はスクロール不可(setTimeout)
     setTimeout(function () {
-        // スクロールすると表示
+        $('.wrapper').css('display','block');
+
+        $('.space').remove();
+
+        // 以下、スクロールすると実行される
         $(window).on("scroll", function () {
 
             //スクロールの値
-            var scrollY = $(this).scrollTop();
+            scrollY = $(this).scrollTop();
 
 
 
             $('.spaceship_light_img').addClass('fade-in');
 
-
-
-
-
-
+            $('.space_bunyan_img').addClass('fade-in');
 
 
 
             // WEBアイコン表示
             var web_targetY = $('.potfolio_web_background').offset().top - 150;
-            console.log(web_targetY);
+            //                            console.log(web_targetY);
 
             if (scrollY > web_targetY) {
                 /*表示1_星（左上左）*/
@@ -85,7 +86,7 @@ $(function () {
 
             // Graphicアイコン表示
             var graphic_targetY = $('.potfolio_graphic_area_background ').offset().top - 150;
-            console.log(graphic_targetY);
+            //                            console.log(graphic_targetY);
 
             if (scrollY > graphic_targetY) {
                 /*表示11_枠*/
@@ -115,22 +116,29 @@ $(function () {
             }
 
 
-
-
             //UFOゆらゆら
-            var UFO_scrollY = $(this).scrollTop();
+            var UFO_targetY = $('.UFO_kidnap').offset().top;
+            console.log('UFO_targetY' + UFO_targetY);
+            console.log('scrollY' + scrollY);
 
-            UFO_scrollY = UFO_scrollY - 50;
 
-            var topPos = UFO_scrollY / 20 + 50;
-
-            console.log('UFO_scrollY' + UFO_scrollY, 'topPos' + topPos);
+            if (scrollY > window_height - UFO_targetY) {
+                console.log('UFO_targetY in');
+                //+だと右、-だと左に動く
+                $('.UFO_kidnap').css('transform', 'translateX(' + scrollY * 1.2 + 'px )');
+            }
+            
+            //Floatゆらゆら
+//            var Float_targetY = $('.float_bunyan_up').offset().top;
+//            if (scrollY > window_height - Float_targetY) {
+                //+だと右、-だと左に動く
+                $('.float_bunyan_up').css('transform', 'translateX(' + scrollY * 1.2 + 'px )');
+//            }
 
         });
-    }, 7000);
-
-
-
+        //window終わり
+    }, 7700);
+    //setTimeout終わり
 
 
 })
