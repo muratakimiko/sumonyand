@@ -2,7 +2,7 @@
 
 /*変数*/
 :root {
-    --starttime: 0s;
+    --starttime: 7s;
 }
 
 
@@ -54,10 +54,21 @@ h3 {
     padding-bottom: 2%;
 }
 
+/*web_graphic_common */
+.cls-1 {
+    fill: none;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    stroke-width: 2px;
+}
 
-.contaner {
-    margin-top: auto;
-    margin-bottom: auto;
+.cls-2 {
+    fill: #fff;
+}
+
+/*非表示(web_graphic_common)*/
+.op0 {
+    opacity: 0;
 }
 
 /*-----------------------------
@@ -105,6 +116,35 @@ h3 {
     }
 }
 
+/*ふわふわ*/
+@keyframes fuwafuwa {
+    0% {
+        -webkit-transform: translate(0, 0) rotate(-5deg);
+    }
+
+    50% {
+        -webkit-transform: translate(0, -5px) rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0)rotate(5deg);
+    }
+}
+
+@-webkit-keyframes fuwafuwa {
+    0% {
+        -webkit-transform: translate(0, 0) rotate(-5deg);
+    }
+
+    50% {
+        -webkit-transform: translate(0, -5px) rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0)rotate(5deg);
+    }
+}
+
 
 /*-----------------------------
  *
@@ -117,7 +157,7 @@ h3 {
     padding: 20px;
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 800px;
 }
 
 .header_title {
@@ -150,6 +190,13 @@ h3 {
     animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
 
+/*prologue*/
+.prologue {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.5;
+}
+
 
 .spaceship_img {
     position: absolute;
@@ -159,14 +206,14 @@ h3 {
     animation: UFO 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
 
-
-
-
-.space_bunyan_img {
+.spaceship_light_img {
     position: absolute;
-    top: 47%;
-    right: 47%;
+    top: 42%;
+    right: 49%;
+    margin-right: -165px;
+    z-index: 1;
 }
+
 
 /*--------scroll--------*/
 
@@ -188,7 +235,7 @@ h3 {
     left: -9%;
 }
 
-p span {
+.scroll_area p span {
     position: absolute;
     top: 70%;
     left: 50%;
@@ -227,25 +274,42 @@ p span {
 
 /*--------//Hamburger Menu--------*/
 
-
-/*-----------------------------
- *
- * universe
- *
- *----------------------------*/
-
-.space_bunyan_float_img {
-    position: absolute;
-    left: 50%;
-    top: 10%;
+/*--------nav--------*/
+.dorawer_nav_wrapper {
+    width: 312px;
+    height: 100vh;
+    /*
+    transition: all .2s;
+    transform: translate(312px);
+    position: fixed;
+*/
+    top: 0;
+    /*    z-index: 1000;*/
+    background-color: #FFF;
 }
 
-.spaceship_kidnap_img {
+.drawer_nav {
+    padding: 112px 24px;
+}
+
+.drawer_nav li {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+/*--------//nav--------*/
+
+
+
+/*
+.universe_area_background .UFO_kidnap {
     position: absolute;
-    left: 50%;
-    top: 10%;
+    top:800px;
 
 }
+*/
+
+
 
 /*-----------------------------
  *
@@ -255,28 +319,34 @@ p span {
 
 .potfolio_web_background {
     justify-content: center;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 350px;
+    padding-bottom: 300px;
     position: relative;
     width: 100%;
+    height: 1200px;
 }
 
 .potfolio_web_area {
     display: flex;
     justify-content: center;
-    padding: 20px;
     position: relative;
     margin: auto;
-    width: 100%;
+}
+
+.web_contaner {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .potfolio_web_area h2 {
+    color: #FFFAD9;
     font-size: 4rem;
 }
 
 .web_icon_area {
     justify-content: center;
     position: relative;
+    margin-left: 100px;
 }
 
 
@@ -284,68 +354,60 @@ p span {
 　星座 Web_icon
 -----------------------*/
 
-.web_icon_img {
+/*表示18_枠*/
+.web_icon_img_anime {
     position: absolute;
     top: 10%;
     left: 11%;
-    opacity: 0;
     animation: fade-in 1.8s ease 3s forwards normal;
 }
 
 /*----画面---*/
 
 /*表示17_枠*/
-#web_frame {
-    opacity: 0;
+.web_frame_anime {
     animation: fade-in 1.8s ease 3s forwards normal;
 }
 
+
 /*表示1_星（左上左）*/
-#web_star8 {
-    opacity: 0;
+.web_star8_anime {
     animation: fade-in 1s ease 0.1s forwards normal;
+
 }
 
 /*表示2_星（右上左）*/
-#web_star2 {
-    opacity: 0;
+.web_star2_anime {
     animation: fade-in 1s ease 0.8s forwards normal;
 }
 
 /*表示3_星（左上右）*/
-#web_star1 {
-    opacity: 0;
+.web_star1_anime {
     animation: fade-in 1s ease 1.2s forwards normal;
-
 }
 
 /*表示4_星（右上右）*/
-#web_star3 {
-    opacity: 0;
+.web_star3_anime {
     animation: fade-in 1s ease 1.6s forwards normal;
 }
 
 /*表示5_星（左下右）*/
-#web_star6 {
-    opacity: 0;
+.web_star6_anime {
     animation: fade-in 1s ease 1.8s forwards normal;
 }
 
 /*表示6_星（右下右）*/
-#web_star4 {
-    opacity: 0;
+.web_star4_anime {
     animation: fade-in 1s ease 1.95s forwards normal;
 }
 
 /*表示7_星（右下左）*/
-#web_star5 {
-    opacity: 0;
+.web_star5_anime {
     animation: fade-in 1s ease 2.05s forwards normal;
 }
 
 /*表示8_星（左下左）*/
-#web_star7 {
-    opacity: 0;
+.web_star7_anime {
     animation: fade-in 1s ease 2.15s forwards normal;
 }
 
@@ -353,52 +415,44 @@ p span {
 /*---画面ボタン---*/
 
 /*表示9_星（右）*/
-#web_star9 {
-    opacity: 0;
+.web_star9_anime {
     animation: fade-in 1s ease 2.25s forwards normal;
 }
 
 /*表示10_星（左）*/
-#web_star10 {
-    opacity: 0;
+.web_star10_anime {
     animation: fade-in 1s ease 2.35s forwards normal;
 }
 
 /*---台---*/
 
 /*表示11_星（右上）*/
-#web_star11 {
-    opacity: 0;
+.web_star11_anime {
     animation: fade-in 1s ease 2.4s forwards normal;
 }
 
 /*表示15_星（右中間）*/
-#web_star12 {
-    opacity: 0;
+.web_star12_anime {
     animation: fade-in 1s ease 2.5s forwards normal;
 }
 
 /*表示12_星（左下）*/
-#web_star14 {
-    opacity: 0;
+.web_star14_anime {
     animation: fade-in 1s ease 2.6s forwards normal;
 }
 
 /*表示13_星（右下）*/
-#web_star13 {
-    opacity: 0;
+.web_star13_anime {
     animation: fade-in 1s ease 2.7s forwards normal;
 }
 
 /*表示14_星（左上）*/
-#web_star16 {
-    opacity: 0;
+.web_star16_anime {
     animation: fade-in 1s ease 2.8s forwards normal;
 }
 
 /*表示16_星（左中間）*/
-#web_star15 {
-    opacity: 0;
+.web_star15_anime {
     animation: fade-in 1s ease 2.9s forwards normal;
 }
 
@@ -412,10 +466,11 @@ p span {
 
 .potfolio_graphic_area_background {
     justify-content: center;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 200px;
+    padding-bottom: 400px;
     position: relative;
     width: 100%;
+    height: 1200px;
 }
 
 .potfolio_graphic_area {
@@ -428,98 +483,89 @@ p span {
 
 .graphic_icon_area {
     justify-content: center;
+    width: 410px;
     display: flex;
-    padding: 20px;
     position: relative;
+    margin-right: 100px;
+
 }
 
 .potfolio_graphic_area h2 {
+    color: #C8EFFA;
     font-size: 4rem;
 }
 
 .graphic_text_contaner {
     margin-top: auto;
     margin-bottom: auto;
-    padding-left: 10%;
+    margin-left: 60px;
 }
 
 
 /*-----------------------
-　星座Grapic_icon
+　星座Graphic_icon
 -----------------------*/
 
 /*表示11_枠*/
-#graphic_frame {
-    opacity: 0;
+.graphic_frame_anime {
     animation: fade-in 1.8s ease 2.8s forwards normal;
 }
 
 /*表示1_星(左上)*/
-#graphic_star1 {
-    opacity: 0;
+.graphic_star1_anime {
     animation: fade-in 1s ease 0.1s forwards normal;
 }
 
 /*表示3_星（上中間左）*/
-#graphic_star2 {
-    opacity: 0;
+.graphic_star2_anime {
     animation: fade-in 1s ease 1s forwards normal;
 }
 
 /*表示5_星（上頂上）*/
-#graphic_star3 {
-    opacity: 0;
+.graphic_star3_anime {
     animation: fade-in 1s ease 2s forwards normal;
 }
 
 /*表示4_星（上中間右）*/
-#graphic_star4 {
-    opacity: 0;
+.graphic_star4_anime {
     animation: fade-in 1s ease 1.5s forwards normal;
 }
 
 /*表示2_星（右上）*/
-#graphic_star5 {
-    opacity: 0;
+.graphic_star5_anime {
     animation: fade-in 1s ease 0.5s forwards normal;
 }
 
 /*表示9_星（右中間）*/
-#graphic_star6 {
-    opacity: 0;
+.graphic_star6_anime {
     animation: fade-in 1s ease 2.55s forwards normal;
 }
 
 /*表示6_星（右下）*/
-#graphic_star7 {
-    opacity: 0;
+.graphic_star7_anime {
     animation: fade-in 1s ease 2.25s forwards normal;
 }
 
 /*表示10_星（下中間）*/
-#graphic_star8 {
-    opacity: 0;
+.graphic_star8_anime {
     animation: fade-in 1s ease 2.65s forwards normal;
 }
 
 /*表示7_星（左下）*/
-#graphic_star9 {
-    opacity: 0;
+.graphic_star9_anime {
     animation: fade-in 1s ease 2.35s forwards normal;
 }
 
 /*表示8_星（左中間）*/
-#graphic_star10 {
-    opacity: 0;
+.graphic_star10_anime {
     animation: fade-in 1s ease 2.45s forwards normal;
 }
 
 /*表示12_グラフィックのイラスト*/
-.graphic_icon_img {
+.graphic_icon_img_anime {
     position: absolute;
-    top: 25%;
-    left: 18%;
-    opacity: 0;
+    top: 24%;
+    left: 17%;
     animation: fade-in 1.8s ease 2.9s forwards normal;
 }
 
@@ -538,28 +584,13 @@ p span {
     padding: 20px;
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 850px;
     background-image: url(../images/BG_border.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-/*-----------------------------
- *
- * Sky1
- *
- *----------------------------*/
-
-.sky1_area {
-    justify-content: center;
-    display: flex;
-    padding: 20px;
-    position: relative;
-    width: 100%;
-    background-color: #BBE2F1;
-
-}
 
 /*-----------------------------
  *
@@ -569,10 +600,11 @@ p span {
 
 .potfolio_game_app_area_background {
     justify-content: center;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 350px;
+    padding-bottom: 300px;
     position: relative;
     width: 100%;
+    height: 1200px;
     background-color: #BBE2F1;
 }
 
@@ -584,22 +616,29 @@ p span {
     width: 100%;
 }
 
-.potfolio_game_app_area h2 {
+.portfolio_game_app_text_area {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 100px;
+}
+
+.portfolio_game_app_text_area h2 {
+    color: #89C4AA;
     font-size: 4rem;
 }
 
 /*-----------------------------
  *
- * Sky2
+ * Sky_gradation
  *
  *----------------------------*/
-
-.sky2_area_background {
+.Sky_gradation_area_background {
     justify-content: center;
     padding-top: 150px;
     padding-bottom: 150px;
     position: relative;
     width: 100%;
+    height: 400px;
     background: linear-gradient(#BBE2F1, #FFF);
 }
 
@@ -653,158 +692,171 @@ p span {
  *
  *----------------------------*/
 
-.dohyoiri_area {
+.dohyoiri_area_background {
     justify-content: center;
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 100px;
     position: relative;
-    width: 1280px;
-    height: 950px;
-    background-color: #fff;
-    background-image: url(../images/bg_skytree.png);
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 1000px;
+    background-color: #FFF;
 }
+
+.dohyo_area {
+    display: flex;
+    position: relative;
+    background-image: url(../images/bg_dohyo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
 
 /*スモーネコ ぶにゃんたちの配置*/
 .d_bunyan_1 {
     position: absolute;
-    top: 612px;
-    left: 496px;
+    top: 72%;
+    left: 40%;
 }
 
 .d_bunyan_2 {
     position: absolute;
-    top: 578px;
-    left: 479px;
+    top: 68%;
+    left: 38%;
 }
 
 .d_bunyan_3 {
     position: absolute;
-    top: 530px;
-    left: 497px;
+    top: 63%;
+    left: 38%;
 }
 
 .d_bunyan_4 {
     position: absolute;
-    top: 509px;
-    left: 534px;
+    top: 61%;
+    left: 40%;
 }
 
 .d_bunyan_5 {
     position: absolute;
-    top: 497px;
-    left: 599px;
+    top: 59%;
+    left: 48%;
 }
 
 .d_bunyan_6 {
     position: absolute;
-    top: 504px;
-    left: 653px;
+    top: 59%;
+    left: 44%;
 }
 
 .d_bunyan_7 {
     position: absolute;
-    top: 519px;
-    left: 696px;
+    top: 59%;
+    left: 52%;
 }
 
 .d_bunyan_8 {
     position: absolute;
-    top: 539px;
-    left: 726px;
+    top: 60%;
+    left: 55%;
 }
 
 .d_bunyan_9 {
     position: absolute;
-    top: 594px;
-    left: 729px;
+    top: 64%;
+    left: 58%;
 }
 
 .d_bunyan_10 {
     position: absolute;
-    top: 616px;
-    left: 698px;
+    top: 68%;
+    left: 57%;
 }
 
 .d_bunyan_11 {
     position: absolute;
-    top: 635px;
-    left: 657px;
+    top: 71%;
+    left: 55%;
 }
 
 .d_bunyan_12 {
     position: absolute;
-    top: 637px;
-    left: 603px;
+    top: 74%;
+    left: 52%;
 }
 
 .d_bunyan_13 {
     position: absolute;
-    top: 633px;
-    left: 540px;
+    top: 74%;
+    left: 48%;
+}
+
+.d_bunyan_14 {
+    position: absolute;
+    top: 73%;
+    left: 44%;
 }
 
 /*スモーネコ ぶにゃん（ダンス）たちの配置*/
 .dance_bunyan_1 {
     position: absolute;
-    top: 559px;
-    left: 316px;
+    top: 64%;
+    left: 27%;
 }
 
 .dance_bunyan_2 {
     position: absolute;
-    top: 601px;
-    left: 266px;
+    top: 68%;
+    left: 22%;
 }
 
 .dance_bunyan_3 {
     position: absolute;
-    top: 667px;
-    left: 278px;
+    top: 74%;
+    left: 19%;
 }
 
 .dance_bunyan_4 {
     position: absolute;
-    top: 704px;
-    left: 333px;
+    top: 80%;
+    left: 24%;
 }
 
 .dance_bunyan_5 {
     position: absolute;
-    top: 736px;
-    left: 396px;
+    top: 86%;
+    left: 28%;
 }
 
 .dance_bunyan_6 {
     position: absolute;
-    top: 507px;
-    left: 827px;
+    top: 63%;
+    left: 65%;
 }
 
 .dance_bunyan_7 {
     position: absolute;
-    top: 540px;
-    left: 885px;
+    top: 67%;
+    left: 70%;
 }
 
 .dance_bunyan_8 {
     position: absolute;
-    top: 592px;
-    left: 936px;
+    top: 72%;
+    left: 75%;
 }
 
 .dance_bunyan_9 {
     position: absolute;
-    top: 667px;
-    left: 915px;
+    top: 80%;
+    left: 73%;
 }
 
 .dance_bunyan_10 {
     position: absolute;
-    top: 722px;
-    left: 860px;
+    top: 86%;
+    left: 67%;
 }
 
 
@@ -855,4 +907,60 @@ p span {
 .profile_text {
     font-size: 1.6rem;
     color: #999;
+}
+
+/*-----------------------------
+ *
+ * move_illust
+ *
+ *----------------------------*/
+
+.space_bunyan_img {
+    position: absolute;
+    top: 380px;
+    right: 47%;
+}
+
+.UFO_kidnap {
+    position: absolute;
+    top: 850px;
+    left: 0%;
+}
+
+.float_bunyan_down {
+    position: absolute;
+    top: 1800px;
+    right: 30%;
+    animation: fuwafuwa 4s infinite linear alternate;
+}
+
+.float_bunyan_up {
+    position: absolute;
+    top: 2000px;
+    left: 30%;
+    animation: fuwafuwa 3s infinite linear alternate;
+}
+
+.neko_airplane {
+    position: absolute;
+    top: 3300px;
+    left: 0%;
+}
+
+.balloon_bunyan {
+    position: absolute;
+    top: 3320px;
+    left: 44%;
+}
+
+.cloud_small {
+    position: absolute;
+    top: 4150px;
+    left: 48%;
+}
+
+.skydiving_bunyan {
+    position: absolute;
+    top: 4400px;
+    left: 0%;
 }
