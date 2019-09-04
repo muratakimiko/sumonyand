@@ -2,7 +2,8 @@
 
 /*変数*/
 :root {
-    --starttime: 7s;
+    --starttime: 0s;
+    /*7s*/
 }
 
 
@@ -133,7 +134,7 @@ h3 {
 
 
 
-.wrapper{
+.wrapper {
     display: none;
 }
 
@@ -929,8 +930,16 @@ h3 {
     position: absolute;
     top: 850px;
     left: 0%;
-    transition: 0.4s cubic-bezier(0,0,0.35,1.09);
+    transition: 0.4s cubic-bezier(0, 0, 0.35, 1.09);
 }
+
+.UFO_kidnap_right {
+    position: absolute;
+    top: 1600px;
+    right: 0%;
+    transition: 0.4s cubic-bezier(0, 0, 0.35, 1.09);
+}
+
 
 .float_bunyan_down {
     position: absolute;
@@ -945,8 +954,8 @@ h3 {
     left: 30%;
 }
 
-.float_bunyan_up_anime{
-    animation: fuwafuwa 3s infinite linear alternate;    
+.float_bunyan_up_anime {
+    animation: fuwafuwa 3s infinite linear alternate;
 }
 
 
