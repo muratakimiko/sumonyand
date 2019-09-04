@@ -167,11 +167,15 @@ h3 {
 
 
 /*オープニングロール中にスクロールさせない対策*/
-/*
-.wrapper {
+
+.wrapHeader {
     display: none;
 }
-*/
+
+.wrapContent {
+    display: none;
+}
+
 
 /*-----------------------------
  *
@@ -187,6 +191,9 @@ h3 {
     height: 800px;
 }
 
+
+
+
 .header_title {
     position: absolute;
     height: 250px;
@@ -200,22 +207,67 @@ h3 {
     width: 100%;
     text-align: center;
     opacity: 0;
-    animation: scale-in 3s ease calc(var(--starttime) - 0.5S) forwards normal;
+    /* animation: scale-in 3s ease calc(var(--starttime) - 0.5S) forwards normal; */
 }
 
 .header_area h2 {
     width: 100%;
     text-align: center;
     opacity: 0;
-    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
+    /* animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal; */
 }
 
 .header_area p {
     width: 100%;
     text-align: center;
     opacity: 0;
-    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
+    /* animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal; */
 }
+
+.header_area.start{
+
+}
+
+.header_area.start h1{
+    animation: scale-in 3s ease 0.5S forwards normal;
+
+}
+
+.header_area.start h2{
+    animation: scale-in 3s ease 1S forwards normal;
+
+}
+
+.header_area.start p{
+    animation: scale-in 3s ease 1S forwards normal;
+
+}
+
+.header_area .spaceship_img {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: -22%;
+    margin-right: 0;
+}
+
+.header_area.start .spaceship_img {
+    animation: UFO 3s ease 1S forwards normal;
+}
+
+
+.spaceship_light_img {
+    position: absolute;
+    top: 380px;
+    right: 50%;
+    margin-right: -165px;
+    z-index: 1;
+}
+
+.spaceship_light_img.fade-in {
+    animation: fade-in 1s ease 0s forwards normal;
+}
+
 
 /*prologue*/
 .prologue {
@@ -966,11 +1018,13 @@ h3 {
  *
  *----------------------------*/
 
+/*
 .spaceship_img {
     position: absolute;
     z-index: 10;
     animation: UFO 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
+
 
 .spaceship_light_img {
     position: absolute;
@@ -983,7 +1037,7 @@ h3 {
 .spaceship_light_img.fade-in {
     animation: fade-in 1s ease 0s forwards normal;
 }
-
+*/
 
 .space_bunyan_img {
     position: absolute;
