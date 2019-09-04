@@ -1,8 +1,5 @@
 $(function () {
 
-    //グローバル変数のスクロール値
-    var scrollY;
-
     //ハンバーガーメニュー
     $('.btn_menu').click(function () {
         $(this).toggleClass('active');
@@ -20,6 +17,7 @@ $(function () {
 
     //プロローグ中はスクロール不可(setTimeout)
     setTimeout(function () {
+        
         $('.wrapper').css('display','block');
 
         $('.space').remove();
@@ -28,7 +26,7 @@ $(function () {
         $(window).on("scroll", function () {
 
             //スクロールの値
-            scrollY = $(this).scrollTop();
+            var scrollY = $(this).scrollTop();
 
 
 
@@ -125,15 +123,16 @@ $(function () {
             if (scrollY > window_height - UFO_targetY) {
                 console.log('UFO_targetY in');
                 //+だと右、-だと左に動く
-                $('.UFO_kidnap').css('transform', 'translateX(' + scrollY * 1.2 + 'px )');
+                $('.UFO_kidnap').css('transform', 'translateX(' + scrollY * 0.5 + 'px )');
             }
             
             //Floatゆらゆら
-//            var Float_targetY = $('.float_bunyan_up').offset().top;
-//            if (scrollY > window_height - Float_targetY) {
+            var Float_targetY = $('.float_bunyan_up').offset().top;
+            var Float_targetY_scroll = scrollY - 1200;
+            if (scrollY > window_height - Float_targetY) {
                 //+だと右、-だと左に動く
-                $('.float_bunyan_up').css('transform', 'translateX(' + scrollY * 1.2 + 'px )');
-//            }
+                $('.float_bunyan_up').css('transform', 'translateX(' + Float_targetY_scroll * 0.8 + 'px )');
+            }
 
         });
         //window終わり

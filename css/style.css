@@ -119,31 +119,18 @@ h3 {
 /*ふわふわ*/
 @keyframes fuwafuwa {
     0% {
-        -webkit-transform: translate(0, 0) rotate(-5deg);
+        -webkit-transform: translate(0, 0) rotate(0deg);
     }
 
     50% {
-        -webkit-transform: translate(0, -5px) rotate(0deg);
+        -webkit-transform: translate(0, -50px) rotate(0deg);
     }
 
     100% {
-        -webkit-transform: translate(0, 0)rotate(5deg);
+        -webkit-transform: translate(0, 0)rotate(0deg);
     }
 }
 
-@-webkit-keyframes fuwafuwa {
-    0% {
-        -webkit-transform: translate(0, 0) rotate(-5deg);
-    }
-
-    50% {
-        -webkit-transform: translate(0, -5px) rotate(0deg);
-    }
-
-    100% {
-        -webkit-transform: translate(0, 0)rotate(5deg);
-    }
-}
 
 
 .wrapper{
@@ -956,8 +943,12 @@ h3 {
     position: absolute;
     top: 2000px;
     left: 30%;
-    animation: fuwafuwa 3s infinite linear alternate;
 }
+
+.float_bunyan_up_anime{
+    animation: fuwafuwa 3s infinite linear alternate;    
+}
+
 
 .neko_airplane {
     position: absolute;
