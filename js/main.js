@@ -40,21 +40,15 @@ $(function () {
             $('.space_bunyan_img').addClass('fade-in');
             $('.space_bunyan_img').css('transform', 'translateY(' + scrollY * 0.9 + 'px )');
 
-            //3249スクロールしたら消える
-//            var space_bunyan_img_scroll_stop = 3249;
-//            console.log('scrollY' + scrollY);
-//            console.log('space_bunyan_img_scroll_stop' + space_bunyan_img_scroll_stop);
-//            if (scrollY > space_bunyan_img_scroll_stop) {
-//                $('.space_bunyan_img').addClass('fade-out');
-//            }
-
-
+            //------------表示関連　star------------
 
             // WEBアイコン表示
             var web_targetY = $('.potfolio_web_background').offset().top - 150;
             //                            console.log(web_targetY);
 
             if (scrollY > web_targetY) {
+                /*WEBタイトル*/
+                $('.web_contaner').addClass('web_contaner_anime');
                 /*表示1_星（左上左）*/
                 $('#web_star8').addClass('web_star8_anime');
                 /*表示2_星（右上左）*/
@@ -101,6 +95,8 @@ $(function () {
             //                            console.log(graphic_targetY);
 
             if (scrollY > graphic_targetY) {
+                /*graphicテキスト表示*/
+                $('.graphic_text_contaner').addClass('graphic_text_contaner_anime');
                 /*表示11_枠*/
                 $('#graphic_frame').addClass('graphic_frame_anime');
                 /*表示1_星(左上)*/
@@ -127,6 +123,53 @@ $(function () {
                 $('#graphic_icon_img').addClass('graphic_icon_img_anime');
             }
 
+            // GAME_APPエリアの表示
+            var game_app_targetY = $('.potfolio_game_app_area_background').offset().top - 150;
+            //                            console.log(graphic_targetY);
+
+            if (scrollY > game_app_targetY) {
+                /*graphicテキスト表示*/
+                $('.potfolio_game_app_area').addClass('potfolio_game_app_area_anime');
+            }
+
+
+            //ネコ力士の表示
+            var dohyoiri_area_targetY = $('.dohyoiri_area_background').offset().top - 150;
+
+            if (scrollY > dohyoiri_area_targetY) {
+
+                //横綱の表示
+                $('.d_bunyan_1').addClass('d_bunyan_1_anime');
+                $('.d_bunyan_2').addClass('d_bunyan_2_anime');
+                $('.d_bunyan_3').addClass('d_bunyan_3_anime');
+                $('.d_bunyan_4').addClass('d_bunyan_4_anime');
+                $('.d_bunyan_5').addClass('d_bunyan_5_anime');
+                $('.d_bunyan_6').addClass('d_bunyan_6_anime');
+                $('.d_bunyan_7').addClass('d_bunyan_7_anime');
+                $('.d_bunyan_8').addClass('d_bunyan_8_anime');
+                $('.d_bunyan_9').addClass('d_bunyan_9_anime');
+                $('.d_bunyan_10').addClass('d_bunyan_10_anime');
+                $('.d_bunyan_11').addClass('d_bunyan_11_anime');
+                $('.d_bunyan_12').addClass('d_bunyan_12_anime');
+                $('.d_bunyan_13').addClass('d_bunyan_13_anime');
+                $('.d_bunyan_14').addClass('d_bunyan_14_anime');
+
+                //ダンス猫の表示
+                $('.dance_bunyan_1').addClass('dance_bunyan_1_anime');
+                $('.dance_bunyan_2').addClass('dance_bunyan_2_anime');
+                $('.dance_bunyan_3').addClass('dance_bunyan_3_anime');
+                $('.dance_bunyan_4').addClass('dance_bunyan_4_anime');
+                $('.dance_bunyan_5').addClass('dance_bunyan_5_anime');
+                $('.dance_bunyan_6').addClass('dance_bunyan_6_anime');
+                $('.dance_bunyan_7').addClass('dance_bunyan_7_anime');
+                $('.dance_bunyan_8').addClass('dance_bunyan_8_anime');
+                $('.dance_bunyan_9').addClass('dance_bunyan_9_anime');
+                $('.dance_bunyan_10').addClass('dance_bunyan_10_anime');
+            }
+
+            //------------表示関連　end------------
+
+            //------------移動関連　star------------
 
             //UFO_kidnap(Left to right)            
             var UFO_targetY = $('.UFO_kidnap').offset().top;
@@ -135,7 +178,7 @@ $(function () {
 
 
             if (scrollY > window_height - UFO_targetY) {
-                console.log('UFO_targetY in');
+                //console.log('UFO_targetY in');
                 //+だと右、-だと左に動く
                 $('.UFO_kidnap').css('transform', 'translateX(' + scrollY * 0.5 + 'px )');
             }
@@ -167,6 +210,55 @@ $(function () {
                 //+だと右、-だと左に動く
                 $('.neko_airplane').css('transform', 'translateX(' + airplane_targetY_scroll * 0.55 + 'px )');
             }
+
+            //風船ネコ
+            var balloon_targetY = $('.balloon_bunyan').offset().top;
+            var balloon_targetY_scroll = scrollY - 3000;
+
+            if (scrollY > window_height - balloon_targetY) {
+                //+だと右、-だと左に動く
+                $('.balloon_bunyan').css('transform', 'translateY(' + balloon_targetY_scroll * 1 + 'px )');
+            }
+
+
+            //スカイダイビングネコ
+            var atmosphere_targetY = $('.atmosphere_area').offset().top;
+            var skydiving_bunyan_targetY_scroll = scrollY - 3700;
+
+            if (scrollY > atmosphere_targetY) {
+                //+だと右、-だと左に動く
+                $('.skydiving_bunyan').css('transform', 'translateX(' + skydiving_bunyan_targetY_scroll * 0.9 + 'px )');
+            }
+
+
+            //鳥ネコ
+            var game_app_area_targetY = $('.potfolio_game_app_area_background').offset().top;
+            var bird_bunyan_targetY_scroll = scrollY - 4000;
+
+            if (scrollY > game_app_area_targetY) {
+                //+だと右、-だと左に動く
+                $('.bird_bunyan').css('transform', 'translateX(' + bird_bunyan_targetY_scroll * -0.5 + 'px )');
+            }
+
+
+            //パラソルネコ（左）
+            var game_app_area_targetY = $('.potfolio_game_app_area_background').offset().top;
+            var parasol_bunyan_targetY_scroll = scrollY - 3200;
+
+            if (scrollY > game_app_area_targetY) {
+                //+だと右、-だと左に動く
+                $('.parasol_bunyan').css('transform', 'translateY(' + parasol_bunyan_targetY_scroll * 0.25 + 'px )');
+            }
+
+            //パラソルネコ（右）
+            var game_app_area_targetY = $('.potfolio_game_app_area_background').offset().top;
+            var parasol_bunyan_right_targetY_scroll = scrollY - 3800;
+
+            if (scrollY > game_app_area_targetY) {
+                //+だと右、-だと左に動く
+                $('.parasol_bunyan_right').css('transform', 'translateY(' + parasol_bunyan_right_targetY_scroll * 0.25 + 'px )');
+            }
+
 
         });
         //window終わり

@@ -146,7 +146,7 @@ h3 {
 /*ふわふわ*/
 @keyframes fuwafuwa {
     0% {
-        transform: translate(0, 0) rotate(-5deg);
+        transform: translate(0, 0) rotate(-20deg);
     }
 
     50% {
@@ -154,14 +154,34 @@ h3 {
     }
 
     100% {
-        transform: translate(0, 0)rotate(5deg);
+        transform: translate(0, 0)rotate(20deg);
+    }
+}
+
+/*ふわふわ(逆)*/
+@keyframes fuwafuwa_reverse {
+    0% {
+        transform: translate(0, 0) rotate(20deg);
+    }
+
+    50% {
+        transform: translate(0, 20px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, 0)rotate(-20deg);
     }
 }
 
 /*右回転*/
 @keyframes right_rotation {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -351,24 +371,27 @@ h3 {
     justify-content: space-around;
     position: relative;
     width: 1000px;
-/*    left:7%;*/
+    /*    left:7%;*/
 }
 
 .web_contaner {
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 100px;
+    margin-right: auto;
+}
+
+.web_contaner_anime {
+    animation: fade-in 5s ease 0.1s forwards normal;
 }
 
 .potfolio_web_area h2 {
-    color: #FFFAD9;
     font-size: 4rem;
 }
 
 .web_icon_area {
     justify-content: center;
     position: relative;
-    margin-left: 100px;
+    margin-left: auto;
 }
 
 
@@ -497,11 +520,11 @@ h3 {
 }
 
 .potfolio_graphic_area {
-    /*    justify-content: center;*/
     display: flex;
+    justify-content: space-around;
     padding: 20px;
     position: relative;
-    width: 1000px;
+    width: 900px;
 }
 
 .graphic_icon_area {
@@ -509,8 +532,7 @@ h3 {
     width: 410px;
     display: flex;
     position: relative;
-    margin-left: 10px;
-
+    margin-right: auto;
 }
 
 .potfolio_graphic_area h2 {
@@ -521,7 +543,11 @@ h3 {
 .graphic_text_contaner {
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 10px;
+    margin-left: auto;
+}
+
+.graphic_text_contaner_anime {
+    animation: fade-in 2s ease 0.1s forwards normal;
 }
 
 
@@ -623,6 +649,7 @@ h3 {
 
 .potfolio_game_app_area_background {
     justify-content: center;
+    display: flex;
     padding-top: 350px;
     padding-bottom: 300px;
     position: relative;
@@ -632,17 +659,30 @@ h3 {
 }
 
 .potfolio_game_app_area {
-    justify-content: center;
     display: flex;
+    justify-content: space-around;
     padding: 20px;
     position: relative;
-    width: 100%;
+    width: 1000px;
+}
+
+.potfolio_game_app_area_anime {
+    animation: fade-in 5s ease 0.1s forwards normal;
 }
 
 .portfolio_game_app_text_area {
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: 100px;
+    margin-right: auto;
+}
+
+.portfolio_game_app_img {
+    justify-content: center;
+    width: 590px;
+    height: 422px;
+    display: flex;
+    position: relative;
+    margin-left: auto;
 }
 
 .portfolio_game_app_text_area h2 {
@@ -691,7 +731,7 @@ h3 {
 .other_work_area {
     justify-content: center;
     display: flex;
-    padding: 20px;
+    padding: 30px;
     position: relative;
     width: 100%;
 }
@@ -730,7 +770,7 @@ h3 {
 .dohyo_area {
     display: flex;
     position: relative;
-    background-image: url(../images/bg_dohyo.png);
+    background-image: url(../images/bg_skytree_dohyo.png);
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
@@ -739,6 +779,12 @@ h3 {
 √
 
 /*スモーネコ ぶにゃんたちの配置*/
+.d_bunyan_1 {
+    position: absolute;
+    top: 72%;
+    left: 40%;
+}
+
 .d_bunyan_1 {
     position: absolute;
     top: 72%;
@@ -823,6 +869,80 @@ h3 {
     left: 44%;
 }
 
+
+/*横綱アニメーション*/
+/*表示1_つっぱり*/
+.d_bunyan_6_anime {
+    animation: fade-in 1s ease 0.1s forwards normal;
+}
+
+/*表示1_さかな*/
+.d_bunyan_7_anime {
+    animation: fade-in 1s ease 0.1s forwards normal;
+}
+
+/*表示2_との*/
+.d_bunyan_8_anime {
+    animation: fade-in 1s ease 0.5s forwards normal;
+}
+
+/*表示2_松*/
+.d_bunyan_4_anime {
+    animation: fade-in 1s ease 0.5s forwards normal;
+}
+
+/*表示3_まげ*/
+.d_bunyan_3_anime {
+    animation: fade-in 1s ease 1s forwards normal;
+}
+
+/*表示3_左横*/
+.d_bunyan_9_anime {
+    animation: fade-in 1s ease 1s forwards normal;
+}
+
+/*表示4_うしろ１*/
+.d_bunyan_10_anime {
+    animation: fade-in 1s ease 1.5s forwards normal;
+}
+
+/*表示4_さくら*/
+.d_bunyan_2_anime {
+    animation: fade-in 1s ease 1.5s forwards normal;
+}
+
+/*表示5_うしろ２*/
+.d_bunyan_11_anime {
+    animation: fade-in 1s ease 2s forwards normal;
+}
+
+/*表示5_右横*/
+.d_bunyan_1_anime {
+    animation: fade-in 1s ease 2s forwards normal;
+}
+
+/*表示6_うしろ5*/
+.d_bunyan_14_anime {
+    animation: fade-in 1s ease 2.5s forwards normal;
+}
+
+/*表示6_うしろ３*/
+.d_bunyan_12_anime {
+    animation: fade-in 1s ease 2.5s forwards normal;
+}
+
+/*表示7_うしろ4*/
+.d_bunyan_13_anime {
+    animation: fade-in 1s ease 3s forwards normal;
+}
+
+/*波*/
+.d_bunyan_5_anime {
+    animation: fade-in 1s ease 0.1s forwards normal;
+}
+
+
+
 /*スモーネコ ぶにゃん（ダンス）たちの配置*/
 .dance_bunyan_1 {
     position: absolute;
@@ -883,6 +1003,123 @@ h3 {
     top: 86%;
     left: 67%;
 }
+
+/*ダンスアニメーション*/
+/*表示1*/
+.dance_bunyan_5_anime {
+    animation: fade-in 1s ease 0.1s forwards normal;
+}
+
+/*表示1*/
+.dance_bunyan_10_anime {
+    animation: fade-in 1s ease 0.1s forwards normal;
+}
+
+/*表示2*/
+.dance_bunyan_4_anime {
+    animation: fade-in 1s ease 1s forwards normal;
+}
+
+/*表示2*/
+.dance_bunyan_9_anime {
+    animation: fade-in 1s ease 1s forwards normal;
+}
+
+/*表示3*/
+.dance_bunyan_3_anime {
+    animation: fade-in 1s ease 1.5s forwards normal;
+}
+
+/*表示3*/
+.dance_bunyan_8_anime {
+    animation: fade-in 1s ease 1.5s forwards normal;
+}
+
+/*表示4*/
+.dance_bunyan_2_anime {
+    animation: fade-in 1s ease 2s forwards normal;
+}
+
+/*表示4*/
+.dance_bunyan_7_anime {
+    animation: fade-in 1s ease 2s forwards normal;
+}
+
+/*表示5*/
+.dance_bunyan_1_anime {
+    animation: fade-in 1s ease 2.5s forwards normal;
+}
+
+/*表示5*/
+.dance_bunyan_6_anime {
+    animation: fade-in 1s ease 2.5s forwards normal;
+}
+
+/*ダンスネコをゆらゆら*/
+
+.dance_bunyan_1_move {
+    animation: horizontal 1s ease-in-out infinite alternate;
+}
+
+.dance_bunyan_2_move {
+    animation: vertical 1s ease-in-out infinite alternate;
+}
+
+.dance_bunyan_3_move {
+    animation: horizontal 1s ease-in-out infinite alternate;
+}
+
+.dance_bunyan_4_move {
+    animation: vertical 1s ease-in-out infinite alternate;
+}
+
+.dance_bunyan_5_move {
+    animation: horizontal 1s ease-in-out infinite alternate;
+}
+
+.dance_bunyan_6_move {
+    animation: vertical 1s ease-in-out infinite alternate;
+}
+
+.dance_bunyan_7_move {
+    animation: horizontal 1s ease-in-out infinite alternate;
+}
+
+.dance_bunyan_8_move {
+    animation: vertical 1s ease-in-out infinite alternate;
+}
+
+.dance_bunyan_9_move {
+    animation: horizontal 1s ease-in-out infinite alternate;
+}
+
+.dance_bunyan_10_move {
+    animation: vertical 1s ease-in-out infinite alternate;
+}
+
+/*横にゆらゆら*/
+@keyframes horizontal {
+    0% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/*縦にゆらゆら*/
+@keyframes vertical {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
 
 
 /*-----------------------------
@@ -991,7 +1228,7 @@ h3 {
     right: 47%;
 }
 
-.space_bunyan_img_anime{
+.space_bunyan_img_anime {
     animation: right_rotation 7s linear infinite;
 }
 
@@ -1053,8 +1290,8 @@ h3 {
 
 .skydiving_bunyan {
     position: absolute;
-    top: 4400px;
-    left: 0%;
+    top: 4300px;
+    left: 45%;
 }
 
 .cloud_midium {
@@ -1065,16 +1302,34 @@ h3 {
 
 .bird_bunyan {
     position: absolute;
-    top: 5300px;
-    right: 10%;
+    top: 5000px;
+    right: 40%;
 }
 
 .parasol_bunyan {
     position: absolute;
-    top: 5200px;
-    left: 10%;
+    top: 4800px;
+    left: 15%;
+}
+
+.parasol_bunyan_right {
+    position: absolute;
+    top: 5000px;
+    right: 15%;
 }
 
 .parasol_bunyan_fuwafuwa {
-    animation: fuwafuwa 2s infinite linear alternate;
+    animation: fuwafuwa 3s infinite linear alternate;
+}
+
+.parasol_bunyan_fuwafuwa_reverse {
+    animation: fuwafuwa_reverse 5s infinite linear alternate;
+}
+
+/*釣りやね*/
+.tsuriyane_img {
+    position: absolute;
+    top: 6540px;
+    right: 50%;
+    margin-right: -233px;
 }
