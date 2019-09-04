@@ -29,10 +29,24 @@ $(function () {
             var scrollY = $(this).scrollTop();
 
 
-
+            //スクロールしたら表示される
             $('.spaceship_light_img').addClass('fade-in');
 
+            //スクロールしたら非表示
+            $('.scroll_area').addClass('fade-out');
+
+            //宇宙ネコ（回転）
+            //スクロールしたら表示され下に移動
             $('.space_bunyan_img').addClass('fade-in');
+            $('.space_bunyan_img').css('transform', 'translateY(' + scrollY * 0.9 + 'px )');
+
+            //3249スクロールしたら消える
+//            var space_bunyan_img_scroll_stop = 3249;
+//            console.log('scrollY' + scrollY);
+//            console.log('space_bunyan_img_scroll_stop' + space_bunyan_img_scroll_stop);
+//            if (scrollY > space_bunyan_img_scroll_stop) {
+//                $('.space_bunyan_img').addClass('fade-out');
+//            }
 
 
 
@@ -129,15 +143,12 @@ $(function () {
             //UFO_kidnap(right to left)            
             var UFO_right_targetY = $('.UFO_kidnap_right').offset().top;
             var UFO_right_targetY_scroll = scrollY - 800;
-            //            console.log('UFO_right_targetY' + UFO_right_targetY);
-            //            console.log('UFO_right_targetY_scroll' + UFO_right_targetY_scroll);
-
 
             if (scrollY > window_height - UFO_right_targetY_scroll) {
                 //+だと右、-だと左に動く
-                $('.UFO_kidnap_right').css('transform', 'translateX(' + UFO_right_targetY_scroll * -0.8 + 'px )');
+                $('.UFO_kidnap_right').css('transform', 'translateX(' + UFO_right_targetY_scroll * -0.4 + 'px )');
                 //+だと下、-だと上に動く
-                $('.UFO_kidnap_right').css('transform', 'translateY(' + UFO_right_targetY_scroll * 0.2 + 'px )');
+                //                $('.UFO_kidnap_right').css('transform', 'translateY(' + UFO_right_targetY_scroll * 0.2 + 'px )');
             }
 
             //Floatゆらゆら
@@ -146,6 +157,15 @@ $(function () {
             if (scrollY > window_height - Float_targetY) {
                 //+だと右、-だと左に動く
                 $('.float_bunyan_up').css('transform', 'translateX(' + Float_targetY_scroll * 0.8 + 'px )');
+            }
+
+
+            //ネコ飛行機（左から右へ）
+            var airplane_targetY = $('.neko_airplane').offset().top;
+            var airplane_targetY_scroll = scrollY - 2200;
+            if (scrollY > window_height - airplane_targetY) {
+                //+だと右、-だと左に動く
+                $('.neko_airplane').css('transform', 'translateX(' + airplane_targetY_scroll * 0.55 + 'px )');
             }
 
         });

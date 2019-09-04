@@ -2,7 +2,7 @@
 
 /*変数*/
 :root {
-    --starttime: 0s;
+    --starttime: 7s;
     /*7s*/
 }
 
@@ -89,6 +89,17 @@ h3 {
     }
 }
 
+/*フェードアウト*/
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 /*拡大表示*/
 @keyframes scale-in {
     0% {
@@ -117,8 +128,8 @@ h3 {
     }
 }
 
-/*ふわふわ*/
-@keyframes fuwafuwa {
+/*上下ゆらゆら*/
+@keyframes updown_yurayura {
     0% {
         -webkit-transform: translate(0, 0) rotate(0deg);
     }
@@ -132,11 +143,35 @@ h3 {
     }
 }
 
+/*ふわふわ*/
+@keyframes fuwafuwa {
+    0% {
+        transform: translate(0, 0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translate(0, -5px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, 0)rotate(5deg);
+    }
+}
+
+/*右回転*/
+@keyframes right_rotation {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 
+
+/*オープニングロール中にスクロールさせない対策*/
+/*
 .wrapper {
     display: none;
 }
+*/
 
 /*-----------------------------
  *
@@ -198,10 +233,20 @@ h3 {
     animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
 
+.scroll_area.fade-out {
+    animation: fade-out 1s ease 0s forwards normal;
+}
+
 .scroll_bunyan_img {
     opacity: 0;
     animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
+
+.scroll_bunyan_fuwafuwa {
+    animation: fuwafuwa 2s infinite linear alternate;
+}
+
+
 
 .scroll_area p {
     position: absolute;
@@ -293,6 +338,7 @@ h3 {
 
 .potfolio_web_background {
     justify-content: center;
+    display: flex;
     padding-top: 350px;
     padding-bottom: 300px;
     position: relative;
@@ -302,14 +348,16 @@ h3 {
 
 .potfolio_web_area {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     position: relative;
-    margin: auto;
+    width: 1000px;
+/*    left:7%;*/
 }
 
 .web_contaner {
     margin-top: auto;
     margin-bottom: auto;
+    margin-right: 100px;
 }
 
 .potfolio_web_area h2 {
@@ -440,6 +488,7 @@ h3 {
 
 .potfolio_graphic_area_background {
     justify-content: center;
+    display: flex;
     padding-top: 200px;
     padding-bottom: 400px;
     position: relative;
@@ -448,11 +497,11 @@ h3 {
 }
 
 .potfolio_graphic_area {
-    justify-content: center;
+    /*    justify-content: center;*/
     display: flex;
     padding: 20px;
     position: relative;
-    width: 100%;
+    width: 1000px;
 }
 
 .graphic_icon_area {
@@ -460,7 +509,7 @@ h3 {
     width: 410px;
     display: flex;
     position: relative;
-    margin-right: 100px;
+    margin-left: 10px;
 
 }
 
@@ -472,7 +521,7 @@ h3 {
 .graphic_text_contaner {
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 60px;
+    margin-right: 10px;
 }
 
 
@@ -628,6 +677,7 @@ h3 {
     padding-bottom: 150px;
     position: relative;
     width: 100%;
+    height: 800px;
     background: #FFF;
 }
 
@@ -686,6 +736,7 @@ h3 {
     width: 100%;
 }
 
+√
 
 /*スモーネコ ぶにゃんたちの配置*/
 .d_bunyan_1 {
@@ -841,25 +892,32 @@ h3 {
  *----------------------------*/
 
 .profile_area_background {
-    justify-content: center;
     padding: 50px;
     position: relative;
     width: 100%;
     background: #FFFAD9;
 }
 
+
+.profile_area_frame {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
 .profile_bunyan_area {
     display: block;
     padding: 20px;
+    margin-right: 50px;
     position: relative;
     width: 500px;
     background: #FFF;
 }
 
 .profile_area {
-
     display: block;
     padding: 20px;
+    margin-left: 50px;
     position: relative;
     width: 500px;
     background: #FFF;
@@ -867,26 +925,37 @@ h3 {
 
 .profile_text_area {
     padding-left: 35px;
-    width: 770px;
+    /*    width: 770px;*/
 }
 
 .profile_area_background h2 {
     text-align: center;
     font-size: 4rem;
     color: #FFE066;
+    margin-bottom: 20px;
 }
 
 .profile_area_background h3 {
+    text-align: center;
     font-size: 1.8rem;
     color: #999;
+    padding-top: 5px;
+
+
+}
+
+.profile_img {
+    text-align: center;
 }
 
 .profile_post {
+    text-align: center;
     font-size: 1.4rem;
     color: #999;
 }
 
 .profile_text {
+    padding: 17px;
     font-size: 1.6rem;
     color: #999;
 }
@@ -906,7 +975,7 @@ h3 {
 .spaceship_light_img {
     position: absolute;
     top: 380px;
-    right: 49%;
+    right: 50%;
     margin-right: -165px;
     z-index: 1;
 }
@@ -922,6 +991,10 @@ h3 {
     right: 47%;
 }
 
+.space_bunyan_img_anime{
+    animation: right_rotation 7s linear infinite;
+}
+
 .space_bunyan_img.fade-in {
     animation: fade-in 1s ease 0s forwards normal;
 }
@@ -935,27 +1008,27 @@ h3 {
 
 .UFO_kidnap_right {
     position: absolute;
-    top: 1600px;
-    right: 0%;
+    top: 1650px;
+    right: 40%;
     transition: 0.4s cubic-bezier(0, 0, 0.35, 1.09);
 }
 
 
 .float_bunyan_down {
     position: absolute;
-    top: 1800px;
-    right: 30%;
-    animation: fuwafuwa 4s infinite linear alternate;
+    top: 3000px;
+    left: 30%;
+    animation: updown_yurayura 4s infinite linear alternate;
 }
 
 .float_bunyan_up {
     position: absolute;
-    top: 2000px;
+    top: 2200px;
     left: 30%;
 }
 
 .float_bunyan_up_anime {
-    animation: fuwafuwa 3s infinite linear alternate;
+    animation: updown_yurayura 3s infinite linear alternate;
 }
 
 
@@ -963,6 +1036,7 @@ h3 {
     position: absolute;
     top: 3300px;
     left: 0%;
+    transition: 0.4s cubic-bezier(0, 0, 0.35, 1.09);
 }
 
 .balloon_bunyan {
@@ -981,4 +1055,26 @@ h3 {
     position: absolute;
     top: 4400px;
     left: 0%;
+}
+
+.cloud_midium {
+    position: absolute;
+    top: 5150px;
+    left: 35%;
+}
+
+.bird_bunyan {
+    position: absolute;
+    top: 5300px;
+    right: 10%;
+}
+
+.parasol_bunyan {
+    position: absolute;
+    top: 5200px;
+    left: 10%;
+}
+
+.parasol_bunyan_fuwafuwa {
+    animation: fuwafuwa 2s infinite linear alternate;
 }
