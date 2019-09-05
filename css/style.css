@@ -211,9 +211,6 @@ h3 {
     height: 800px;
 }
 
-
-
-
 .header_title {
     position: absolute;
     height: 250px;
@@ -254,12 +251,12 @@ h3 {
 }
 
 .header_area.start h2{
-    animation: scale-in 3s ease 1S forwards normal;
+    animation: fade-in 3s ease 1S forwards normal;
 
 }
 
 .header_area.start p{
-    animation: scale-in 3s ease 1S forwards normal;
+    animation: fade-in 3s ease 1S forwards normal;
 
 }
 
@@ -298,11 +295,15 @@ h3 {
 
 /*--------scroll--------*/
 
-.scroll_area {
+.header_area .scroll_area {
     position: absolute;
     left: 49%;
     bottom: 14%;
-    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
+}
+
+.header_area.start .scroll_area{
+    animation: fade-in 3s ease 1S forwards normal;
+
 }
 
 .scroll_area.fade-out {
@@ -311,7 +312,7 @@ h3 {
 
 .scroll_bunyan_img {
     opacity: 0;
-    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
+    /* animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal; */
 }
 
 .scroll_bunyan_fuwafuwa {
@@ -1303,7 +1304,6 @@ h3 {
     right: 40%;
     transition: 0.4s cubic-bezier(0, 0, 0.35, 1.09);
 }
-
 
 .float_bunyan_down {
     position: absolute;

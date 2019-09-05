@@ -26,7 +26,6 @@ $(function () {
     //ヘッダーを表示
     $('.wrapHeader').css('display', 'block');
 
-
     //プロローグ中はスクロール不可(setTimeout)
     setTimeout(function () {
         $('.header_area').addClass('start');
