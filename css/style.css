@@ -1,10 +1,11 @@
 @charset "UTF-8";
 
 /*変数*/
+/*
 :root {
     --starttime: 7s;
-    /*7s*/
 }
+*/
 
 
 * {
@@ -187,11 +188,14 @@ h3 {
 
 
 /*オープニングロール中にスクロールさせない対策*/
-/*
-.wrapper {
+.wrapperHeader {
     display: none;
 }
-*/
+
+.wrapContent {
+    display: none;
+}
+
 
 /*-----------------------------
  *
@@ -216,25 +220,67 @@ h3 {
     margin-top: -125px;
 }
 
+.header_area.start h1 {
+    animation: scale-in 3s ease 0.5S forwards normal;
+}
+
+.header_area.start h2 {
+    animation: fade-in 3s ease 1S forwards normal;
+}
+
+.header_area.start p {
+    animation: fade-in 3s ease 1S forwards normal;
+}
+
+.header_area.start scroll_area {
+    animation: fade-in 3s ease 1S forwards normal;
+}
+
+.header_area .spaceship_img {
+    position: absolute;
+    z-index: 10;
+    top:10px;
+    right:-22%;
+}
+
+.header_area.start .spaceship_img {
+    animation: UFO 3s ease 1S forwards normal;
+}
+
+/*
+.header_area.start .spaceship_light_img {
+    position: absolute;
+    top: 380px;
+    right: 50%;
+    margin-right: -165px;
+    z-index: 1;
+}
+
+.header_area.start .spaceship_light_img.fade-in {
+    animation: fade-in 1s ease 0s forwards normal;
+}
+*/
+
+
+
+
 .header_area h1 {
     width: 100%;
     text-align: center;
     opacity: 0;
-    animation: scale-in 3s ease calc(var(--starttime) - 0.5S) forwards normal;
 }
 
 .header_area h2 {
     width: 100%;
     text-align: center;
     opacity: 0;
-    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
+
 }
 
 .header_area p {
     width: 100%;
     text-align: center;
     opacity: 0;
-    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
 
 /*prologue*/
@@ -246,20 +292,23 @@ h3 {
 
 /*--------scroll--------*/
 
-.scroll_area {
+.header_area .scroll_area {
     position: absolute;
     left: 49%;
     bottom: 14%;
-    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
 }
 
 .scroll_area.fade-out {
     animation: fade-out 1s ease 0s forwards normal;
 }
 
-.scroll_bunyan_img {
+.header_area.start .scroll_bunyan_img {
+    animation: fade-in 3s ease 1S forwards normal;
+}
+
+.header_area .scroll_bunyan_img {
     opacity: 0;
-    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;
+/*    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;*/
 }
 
 .scroll_bunyan_fuwafuwa {
@@ -1203,25 +1252,6 @@ h3 {
  *
  *----------------------------*/
 
-.spaceship_img {
-    position: absolute;
-    z-index: 10;
-    animation: UFO 3s ease calc(var(--starttime) + 1S) forwards normal;
-}
-
-.spaceship_light_img {
-    position: absolute;
-    top: 380px;
-    right: 50%;
-    margin-right: -165px;
-    z-index: 1;
-}
-
-.spaceship_light_img.fade-in {
-    animation: fade-in 1s ease 0s forwards normal;
-}
-
-
 .space_bunyan_img {
     position: absolute;
     top: 380px;
@@ -1236,6 +1266,18 @@ h3 {
     animation: fade-in 1s ease 0s forwards normal;
 }
 
+.spaceship_light_img {
+    position: absolute;
+    top: 380px;
+    right: 50%;
+    margin-right: -165px;
+    z-index: 1;
+}
+
+.spaceship_light_img.fade-in {
+    animation: fade-in 1s ease 0s forwards normal;
+}
+
 .UFO_kidnap {
     position: absolute;
     top: 850px;
@@ -1245,8 +1287,8 @@ h3 {
 
 .UFO_kidnap_right {
     position: absolute;
-    top: 1650px;
-    right: 40%;
+    top: 2000px;
+    left: 0%;
     transition: 0.4s cubic-bezier(0, 0, 0.35, 1.09);
 }
 
@@ -1254,7 +1296,7 @@ h3 {
 .float_bunyan_down {
     position: absolute;
     top: 3000px;
-    left: 30%;
+    left: 25%;
     animation: updown_yurayura 4s infinite linear alternate;
 }
 
@@ -1268,11 +1310,19 @@ h3 {
     animation: updown_yurayura 3s infinite linear alternate;
 }
 
+.float_bunyan_above {
+    position: absolute;
+    top: 2800px;
+    right: 25%;
+    animation: vertical 1s ease-in-out infinite alternate;
+}
+
 
 .neko_airplane {
     position: absolute;
     top: 3300px;
-    left: 0%;
+    left: 50%;
+    margin-left: -500px;
     transition: 0.4s cubic-bezier(0, 0, 0.35, 1.09);
 }
 
