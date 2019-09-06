@@ -144,6 +144,21 @@ h3 {
     }
 }
 
+/*上下ゆらゆら(逆：下上)*/
+@keyframes updown_yurayura_reverse {
+    0% {
+        -webkit-transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        -webkit-transform: translate(0, 50px) rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0)rotate(0deg);
+    }
+}
+
 /*ふわふわ*/
 @keyframes fuwafuwa {
     0% {
@@ -185,13 +200,27 @@ h3 {
     }
 }
 
+/*左回転*/
+@keyframes left_rotation {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
 
 
 /*オープニングロール中にスクロールさせない対策*/
+/*オープニングロール中は非表示エリア*/
 .wrapperHeader {
     display: none;
 }
 
+/*宇宙船が中央に移動するまで非表示エリア*/
 .wrapContent {
     display: none;
 }
@@ -239,30 +268,13 @@ h3 {
 .header_area .spaceship_img {
     position: absolute;
     z-index: 10;
-    top:10px;
-    right:-22%;
+    top: 10px;
+    right: -22%;
 }
 
 .header_area.start .spaceship_img {
     animation: UFO 3s ease 1S forwards normal;
 }
-
-/*
-.header_area.start .spaceship_light_img {
-    position: absolute;
-    top: 380px;
-    right: 50%;
-    margin-right: -165px;
-    z-index: 1;
-}
-
-.header_area.start .spaceship_light_img.fade-in {
-    animation: fade-in 1s ease 0s forwards normal;
-}
-*/
-
-
-
 
 .header_area h1 {
     width: 100%;
@@ -283,12 +295,13 @@ h3 {
     opacity: 0;
 }
 
-/*prologue*/
+/*prologue（オープニングロール）*/
 .prologue {
     font-size: 2rem;
     font-weight: 600;
     line-height: 2.5;
 }
+
 
 /*--------scroll--------*/
 
@@ -299,7 +312,7 @@ h3 {
 }
 
 .scroll_area.fade-out {
-    animation: fade-out 1s ease 0s forwards normal;
+    animation: fade-out 0.5s ease 0s forwards normal;
 }
 
 .header_area.start .scroll_bunyan_img {
@@ -308,7 +321,7 @@ h3 {
 
 .header_area .scroll_bunyan_img {
     opacity: 0;
-/*    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;*/
+    /*    animation: fade-in 3s ease calc(var(--starttime) + 1S) forwards normal;*/
 }
 
 .scroll_bunyan_fuwafuwa {
@@ -355,47 +368,188 @@ h3 {
     }
 }
 
-
-/*--------//scroll--------*/
+/*--------//scroll　end--------*/
 
 /*--------Hamburger Menu--------*/
 
-/*--------//Hamburger Menu--------*/
+.zdo_drawer_button * {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    font: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align: left;
+    text-decoration: none;
+    list-style: none;
+}
 
-/*--------nav--------*/
-.dorawer_nav_wrapper {
+.zdo_drawer_button {
+    display: block;
+    padding: 0;
+    width: 42px;
+    height: 26px;
+    position: relative;
+    background: none;
+    border: none;
+    text-align: center;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    outline: none;
+}
+
+.zdo_drawer_button .zdo_drawer_bar {
+    display: block;
+    width: 42px;
+    height: 2px;
+    transition: all 0.2s;
+    transform-origin: 0% 0%;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 0;
+}
+
+.zdo_drawer_button .zdo_drawer_bar1 {
+    top: 0;
+}
+
+.zdo_drawer_button .zdo_drawer_bar2 {
+    top: 50%;
+}
+
+.zdo_drawer_button .zdo_drawer_bar3 {
+    top: 100%;
+}
+
+.zdo_drawer_button.active .zdo_drawer_bar {
+    width: 36.77px;
+    left: 8px;
+}
+
+.zdo_drawer_button.active .zdo_drawer_bar1 {
+    transform: rotate(0.7853981634rad) translateY(-50%);
+    top: 0px;
+}
+
+.zdo_drawer_button.active .zdo_drawer_bar2 {
+    opacity: 0;
+}
+
+.zdo_drawer_button.active .zdo_drawer_bar3 {
+    transform: rotate(-0.7853981634rad) translateY(-50%);
+    top: calc(100% - 0px);
+}
+
+.zdo_drawer_button.active .zdo_drawer_menu_text {
+    display: none;
+}
+
+.zdo_drawer_button.active .zdo_drawer_close {
+    display: block;
+}
+
+.zdo_drawer_text {
+    width: 100%;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    text-align: center;
+    font-size: 10px;
+}
+
+.zdo_drawer_close {
+    letter-spacing: 0.08em;
+    display: none;
+}
+
+/*+++ Default Button Color +++*/
+.zdo_drawer_button {
+    color: #999;
+}
+
+.zdo_drawer_button .zdo_drawer_bar {
+    background-color: #999;
+}
+
+/* === Hambuerger Button's Style End === */
+.zdo_drawer_menu .zdo_drawer_button {
+    /*+++ Hamburger Button Position +++*/
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 1001;
+}
+
+.zdo_drawer_menu a {
+    color: skyblue;
+    text-decoration: none;
+}
+
+.zdo_drawer_menu a:visited {
+    color: deepskyblue;
+}
+
+.zdo_drawer_menu .zdo_drawer_bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(51, 51, 51, 0.5);
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.zdo_drawer_menu .zdo_drawer_nav_wrapper {
     width: 312px;
-    height: 100vh;
-    /*
-    transition: all .2s;
+    height: 100%;
+    transition: all 0.2s;
     transform: translate(312px);
     position: fixed;
-*/
     top: 0;
-    /*    z-index: 1000;*/
+    right: 0;
+    z-index: 1000;
     background-color: #FFF;
 }
 
-.drawer_nav {
+.zdo_drawer_menu .zdo_drawer_nav_wrapper.open {
+    transform: translate(0);
+}
+
+.zdo_drawer_menu.left .zdo_drawer_button {
+    right: auto;
+    left: 32px;
+}
+
+.zdo_drawer_menu.left .zdo_drawer_nav_wrapper {
+    transform: translate(-312px);
+    right: auto;
+    left: 0;
+}
+
+.zdo_drawer_menu.left .zdo_drawer_nav_wrapper.open {
+    transform: translate(0);
+}
+
+/*+++ Default Navigation CSS +++*/
+.zdo_drawer_menu .zdo_drawer_nav {
     padding: 112px 24px;
 }
 
-.drawer_nav li {
-    font-size: 1.6rem;
+.zdo_drawer_menu .zdo_drawer_nav li {
+    font-size: 16px;
     margin-bottom: 15px;
 }
 
-/*--------//nav--------*/
 
 
-
-/*
-.universe_area_background .UFO_kidnap {
-    position: absolute;
-    top:800px;
-
-}
-*/
+/*--------//Hamburger Menu end--------*/
 
 
 
@@ -417,16 +571,16 @@ h3 {
 
 .potfolio_web_area {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     position: relative;
-    width: 1000px;
-    /*    left:7%;*/
+    width: 1050px;
 }
 
 .web_contaner {
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: auto;
+    width: 313px;
+    margin-left: 80px;
 }
 
 .web_contaner_anime {
@@ -440,7 +594,7 @@ h3 {
 .web_icon_area {
     justify-content: center;
     position: relative;
-    margin-left: auto;
+    width: 460px;
 }
 
 
@@ -570,10 +724,10 @@ h3 {
 
 .potfolio_graphic_area {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 20px;
     position: relative;
-    width: 900px;
+    width: 1050px;
 }
 
 .graphic_icon_area {
@@ -592,7 +746,8 @@ h3 {
 .graphic_text_contaner {
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: auto;
+    width: 230px;
+    margin-right: 150px;
 }
 
 .graphic_text_contaner_anime {
@@ -703,16 +858,16 @@ h3 {
     padding-bottom: 300px;
     position: relative;
     width: 100%;
-    height: 1200px;
+    height: 1300px;
     background-color: #BBE2F1;
 }
 
 .potfolio_game_app_area {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 20px;
     position: relative;
-    width: 1000px;
+    width: 1050px;
 }
 
 .potfolio_game_app_area_anime {
@@ -722,7 +877,8 @@ h3 {
 .portfolio_game_app_text_area {
     margin-top: auto;
     margin-bottom: auto;
-    margin-right: auto;
+    margin-left: 50px;
+    width: 225px;
 }
 
 .portfolio_game_app_img {
@@ -731,7 +887,8 @@ h3 {
     height: 422px;
     display: flex;
     position: relative;
-    margin-left: auto;
+    margin-left: 50px;
+    ;
 }
 
 .portfolio_game_app_text_area h2 {
@@ -762,6 +919,7 @@ h3 {
 
 .other_work_area_background {
     justify-content: center;
+    display: block;
     padding-top: 150px;
     padding-bottom: 150px;
     position: relative;
@@ -773,16 +931,24 @@ h3 {
 .other_work_area_background h2 {
     text-align: center;
     font-size: 4rem;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     color: #FAAFBB;
 }
 
-.other_work_area {
+.other_work_area_center {
     justify-content: center;
+    display: flex;
+    position: relative;
+    width: 100%;
+    ;
+}
+
+.other_work_area {
+    justify-content: space-between;
     display: flex;
     padding: 30px;
     position: relative;
-    width: 100%;
+    width: 1050px;
 }
 
 .other_work_area h3 {
@@ -792,12 +958,16 @@ h3 {
 }
 
 .makizushi_icon_area {
-    padding: 50px;
+    width: 395px;
+    height: 100%;
 }
 
 .photography_icon_area {
-    padding: 50px;
+    width: 395px;
+    height: 100%;
+    margin-right: 30px;
 }
+
 
 /*-----------------------------
  *
@@ -825,7 +995,7 @@ h3 {
     width: 100%;
 }
 
-√
+
 
 /*スモーネコ ぶにゃんたちの配置*/
 .d_bunyan_1 {
@@ -1246,6 +1416,23 @@ h3 {
     color: #999;
 }
 
+
+/*-----------------------------
+ *
+ * footer
+ *
+ *----------------------------*/
+
+.footer_area {
+    background-color: #f5f5f5;
+}
+
+footer p {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #999;
+}
+
 /*-----------------------------
  *
  * move_illust
@@ -1255,7 +1442,8 @@ h3 {
 .space_bunyan_img {
     position: absolute;
     top: 380px;
-    right: 47%;
+    left: 50%;
+    margin-left: -46px;
 }
 
 .space_bunyan_img_anime {
@@ -1278,18 +1466,16 @@ h3 {
     animation: fade-in 1s ease 0s forwards normal;
 }
 
-.UFO_kidnap {
+
+.UFO_kidnap_left {
     position: absolute;
-    top: 850px;
-    left: 0%;
+    top: 1700px;
+    left: 40%;
     transition: 0.4s cubic-bezier(0, 0, 0.35, 1.09);
 }
 
-.UFO_kidnap_right {
-    position: absolute;
-    top: 2000px;
-    left: 0%;
-    transition: 0.4s cubic-bezier(0, 0, 0.35, 1.09);
+.UFO_kidnap_left_anime {
+    animation: fuwafuwa_reverse 5s infinite linear alternate;
 }
 
 
@@ -1302,19 +1488,19 @@ h3 {
 
 .float_bunyan_up {
     position: absolute;
-    top: 2200px;
-    left: 30%;
+    top: 2000px;
+    left: 20%;
 }
 
 .float_bunyan_up_anime {
-    animation: updown_yurayura 3s infinite linear alternate;
+    animation: left_rotation 15s infinite linear;
 }
 
 .float_bunyan_above {
     position: absolute;
     top: 2800px;
     right: 25%;
-    animation: vertical 1s ease-in-out infinite alternate;
+    animation: updown_yurayura_reverse 4s infinite linear alternate;
 }
 
 
@@ -1326,12 +1512,6 @@ h3 {
     transition: 0.4s cubic-bezier(0, 0, 0.35, 1.09);
 }
 
-.balloon_bunyan {
-    position: absolute;
-    top: 3320px;
-    left: 44%;
-}
-
 .cloud_small {
     position: absolute;
     top: 4150px;
@@ -1340,8 +1520,8 @@ h3 {
 
 .skydiving_bunyan {
     position: absolute;
-    top: 4300px;
-    left: 45%;
+    top: 3950px;
+    left: 40%;
 }
 
 .cloud_midium {
@@ -1379,7 +1559,7 @@ h3 {
 /*釣りやね*/
 .tsuriyane_img {
     position: absolute;
-    top: 6540px;
+    top: 6630px;
     right: 50%;
     margin-right: -233px;
 }

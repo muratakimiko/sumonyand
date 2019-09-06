@@ -8,72 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/space.css">
     <title>ムラタキミコ（スモーニャンド） </title>
-
-    <!--Hamburger Menu-->
-    <style>
-        /*   ボタンタグ設定   */
-        button {
-            display: block;
-            background: none;
-            border: none;
-            padding: 0;
-            width: 42px;
-            color: #333;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1001;
-            text-align: center;
-            outline: none;
-        }
-
-        /*   ハンバーガーボタン3本線   */
-        button span.bar {
-            display: block;
-            height: 2px;
-            background-color: #333;
-            margin: 10px 0;
-            transition: all 0.2s;
-            transform-origin: 0 0;
-        }
-
-        button .close {
-            letter-spacing: 0.08em;
-            display: none;
-        }
-
-        button .menu {
-            display: block;
-        }
-
-        /*  メニューアクティブ時  */
-        button.active span.bar {
-            width: 49px;
-        }
-
-        button.active .bar1 {
-            transform: rotate(30deg);
-        }
-
-        button.active .bar2 {
-            opacity: 0;
-        }
-
-        button.active .bar3 {
-            transform: rotate(-30deg);
-        }
-
-        button.active .menu {
-            display: none;
-        }
-
-        button.active .close {
-            display: block;
-        }
-    </style>
-    <!--//Hamburger Menu-->
 </head>
 
 
@@ -125,79 +59,66 @@
             </div>
             <!--//scroll-->
 
+
+            <!--Hamburger Menu-->
+            <div class="zdo_drawer_menu left">
+                <div class="zdo_drawer_bg"></div>
+                <button type="button" class="zdo_drawer_button">
+                    <span class="zdo_drawer_bar zdo_drawer_bar1"></span>
+                    <span class="zdo_drawer_bar zdo_drawer_bar2"></span>
+                    <span class="zdo_drawer_bar zdo_drawer_bar3"></span>
+                    <span class="zdo_drawer_menu_text zdo_drawer_text">MENU</span>
+                    <span class="zdo_drawer_close zdo_drawer_text">CLOSE</span>
+                </button>
+                <nav class="zdo_drawer_nav_wrapper">
+                    <ul class="zdo_drawer_nav">
+                        <li>
+                            <a href="#web_area">
+                                Web
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#graphic_area">
+                                Graphic
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#game_app_area">
+                                Game / App
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#makizushi_area">
+                                SushiRollArt
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#photography_area">
+                                Photography
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#profile_area">
+                                Profile
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!--Hamburger Menu end-->
+
+
+
             <!--spaceship-->
             <div class="spaceship_img">
                 <img src="images/spaceship_bunyan.png" class="supaceship" alt="宇宙船">
             </div>
-            <!--spaceship_light_img-->
-            <!--
-            <div class="spaceship_light_img op0">
-                <img src="images/spaceship_light.png" class="supaceship" alt="宇宙船ひかり">
-            </div>
--->
-
-
-
-            <!--Hamburger Menu-->
-            <button type="button" class="btn_menu">
-                <span class="bar bar1"></span>
-                <span class="bar bar2"></span>
-                <span class="bar bar3"></span>
-                <span class="menu">MENU</span>
-                <span class="close">CLOSE</span>
-            </button>
-            <!--//Hamburger Menu-->
-
-            <!--navメニュー-->
-            <!--
-        <nav class="dorawer_nav_wrapper">
-            <ul class="drawer_nav">
-                <li>
-                    <a href="#">
-                        Top
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Web
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Graphic
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Game / App
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Sushiroll Art
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Photograpy
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Plofile
-                    </a>
-                </li>
-            </ul>
-        </nav>
--->
-            <!--メニュー-->
-
-
-
-
         </header>
+        <!-- //header end-->
     </div>
-    <!-- //header -->
+    <!--wrapperHeader end-->
+
 
 
 
@@ -205,7 +126,7 @@
     <!--potfolio_web-->
     <div class="wrapContent">
         <div class="potfolio_web_background">
-            <section class="potfolio_web_area">
+            <section id="web_area" class="potfolio_web_area">
                 <hgroup class="web_contaner op0">
                     <h2>WEB</h2>
                     <h3>飾り巻き寿司教室 / 泳げ！スイまるくん / <br>スモーニャンド</h3>
@@ -287,7 +208,7 @@
         <!--potfolio_graphic-->
 
         <div class="potfolio_graphic_area_background">
-            <section class="potfolio_graphic_area">
+            <section id="graphic_area" class="potfolio_graphic_area">
                 <!--星座 graphic-->
                 <div class="graphic_icon_area">
                     <svg id="graphic_icon_star" xmlns="http://www.w3.org/2000/svg" width="368.366" height="539.286" viewBox="0 0 368.366 539.286">
@@ -359,7 +280,7 @@
 
         <!--potfolio_game_app-->
         <div class="potfolio_game_app_area_background">
-            <section class="potfolio_game_app_area op0">
+            <section id="game_app_area" class="potfolio_game_app_area op0">
                 <div class="portfolio_game_app_text_area">
                     <h2>GAME / APP</h2>
                     <p>泳げ！スイまる君 / 猫だち</p>
@@ -383,32 +304,32 @@
 
 
         <!--other_work-->
-        <div class="other_work_area_background">
-            <section>
-                <h2>OTHER WORK</h2>
+        <section class="other_work_area_background">
+            <h2>OTHER WORK</h2>
+            <div class="other_work_area_center">
                 <div class="other_work_area">
-
-                    <div class="makizushi_icon_area">
+                    <div id="makizushi_area" class="makizushi_icon_area">
                         <a href="http://kimiko-tokyo.jp/wp" target="_blank">
                             <img src="images/Sushiroll_collage.png" alt="アート巻き寿司アイコン"></a>
                         <h3>Sushiroll Art</h3>
                     </div>
-                    <div class="photography_icon_area">
+                    <div id="photography_area" class="photography_icon_area">
                         <img src="images/Photo_collage.png" alt="写真撮影アイコン">
                         <h3>Photography</h3>
                     </div>
-                </div>
-            </section>
-        </div>
+                </div>s
+            </div>
+        </section>
         <!--//other_work-->
 
 
 
 
         <!--dohyoiri-->
+
         <div class="dohyoiri_area_background">
             <div class="dohyo_area">
-                <!--//横綱ぶにゃん-->
+                <!--横綱ぶにゃん-->
                 <div class="d_bunyan_4 op0">
                     <img src="images/dohyo_bunyan_4.png" alt="スモーネコ松">
                 </div>
@@ -463,9 +384,11 @@
                 <div class="d_bunyan_14 op0">
                     <img src="images/dohyo_bunyan_13.png" alt="スモーネコ後ろ姿5">
                 </div>
+
                 <!--//横綱ぶにゃん-->
 
                 <!--ダンスぶにゃん-->
+
                 <div class="dance_bunyan_1 op0">
                     <div class="dance_bunyan_1_move">
                         <img src="images/dance_bunyan_right.png" alt="ぶにゃんダンス（右）">
@@ -516,16 +439,19 @@
                         <img src="images/dance_bunyan_right.png" alt="ぶにゃんダンス（右）">
                     </div>
                 </div>
+
                 <!--//ダンスぶにゃん-->
+
             </div>
         </div>
+
         <!--//dohyoiri-->
 
 
 
 
         <!--profile-->
-        <section class="profile_area_background">
+        <section id="profile_area" class="profile_area_background">
             <h2>PROFILE</h2>
             <div class="profile_area_frame">
                 <div class="profile_bunyan_area">
@@ -571,6 +497,15 @@
 
 
 
+        <!--footer-->
+        <footer class="footer_area">
+            <p><small>&copy; 2019 Kimiko Murata</small></p>
+        </footer>
+        <!--footer-->
+
+
+
+
         <!--move_illust-->
 
         <!--space_bunyan_bace-->
@@ -591,15 +526,15 @@
 
 
         <!--UFO右へ移動-->
-        <div class="UFO_kidnap_right">
-            <img src="images/spaceship_kidnap.png" alt="スモーネコ宇宙船にさらわれる">
+        <div class="UFO_kidnap_left">
+            <div class="UFO_kidnap_left_anime">
+                <img src="images/spaceship_kidnap.png" alt="スモーネコ宇宙船にさらわれる">
+            </div>
         </div>
 
         <!--float-->
         <div class="float_bunyan_above">
-            <div class="float_bunyan_up_anime">
-                <img src="images/space_bunyan_float_up.png" alt="宇宙に浮かぶスモーネコ">
-            </div>
+            <img src="images/space_bunyan_float_up.png" alt="宇宙に浮かぶスモーネコ">
         </div>
 
         <div class="float_bunyan_up">
@@ -615,11 +550,6 @@
         <!--airplane-->
         <div class="neko_airplane">
             <img src="images/airplane.png" alt="ネコ飛行機">
-        </div>
-
-        <!--balloon-->
-        <div class="balloon_bunyan">
-            <img src="images/balloon_bunyan_1.png" alt="風船ぶにゃん">
         </div>
 
         <!--cloud_small-->
@@ -659,13 +589,12 @@
             <img src="images/tsuriyane.png" alt="釣りやね">
         </div>
 
-        <!--//move_illust-->
-
-
+        <!--//move_illust end-->
 
     </div>
-    <!--//wrapper-->
+    <!--//wrapper end-->
 
+    <!--jQueryの読み込み-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="js/jquery.inview.min.js"></script>
     <script src="js/jquery.typist.js"></script>
